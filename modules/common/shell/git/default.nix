@@ -51,7 +51,10 @@ in {
       };
       programs.gpg.enable = true;
 
-      home.packages = [ pkgs.pinentry ];
+      home.packages = [
+        pkgs.pinentry
+        pkgs.tig
+      ];
     };
   };
 }
