@@ -1,9 +1,9 @@
 { username }: {lib, pkgs, config, ... }:
 with lib;
 let
-  cfg = config.modules.users.${username}.shell.nvim;
+  cfg = config.modules.users.${username}.editor.nvim;
 in {
-  options.modules.users.${username}.shell.nvim = {
+  options.modules.users.${username}.editor.nvim = {
     enable = mkEnableOption "${username} neovim";
   };
 
