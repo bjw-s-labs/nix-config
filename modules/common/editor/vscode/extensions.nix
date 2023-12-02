@@ -6,6 +6,7 @@ let
   vscode-utils = pkgs.vscode-utils;
 in
 {
+
   "ms-python"."python" = vscode-utils.extensionFromVscodeMarketplace {
     name = "python";
     publisher = "ms-python";
@@ -30,8 +31,8 @@ in
   "eamodio"."gitlens" = vscode-utils.extensionFromVscodeMarketplace {
     name = "gitlens";
     publisher = "eamodio";
-    version = "14.5.1";
-    sha256 = "05kz3mqf80bdb98ngl7kr6yqhy22vg583z9if0ndy0xriwa036gz";
+    version = "14.5.2";
+    sha256 = "0a6a0620pq2c23472nsa6z8bfxmwc0c4qfxy1bs2bawwap9s7lm8";
   };
 
   "ms-vscode-remote"."remote-containers" = vscode-utils.extensionFromVscodeMarketplace {
@@ -114,8 +115,15 @@ in
   "catppuccin"."catppuccin-vsc" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc";
     publisher = "catppuccin";
-    version = "3.7.1";
-    sha256 = "0428lvmsy5idfk9zqx8xak8b7d86vxzlg59y31d0n5sds2xj2lq5";
+    version = "3.8.0";
+    sha256 = "0hddzfspaizc5qb5a07aizww5khydskxsxlzkjf34xakryvdknza";
+  };
+
+  "mrmlnc"."vscode-json5" = vscode-utils.extensionFromVscodeMarketplace {
+    name = "vscode-json5";
+    publisher = "mrmlnc";
+    version = "1.0.0";
+    sha256 = "0bghvq89pp5s4liw11py8afyrlg4b02npv9ypnrnl0d2w99ab6aw";
   };
 
   "catppuccin"."catppuccin-vsc-icons" = vscode-utils.extensionFromVscodeMarketplace {

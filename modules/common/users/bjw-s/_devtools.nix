@@ -14,6 +14,7 @@ in
       fnando.linter
       hashicorp.terraform
       jnoortheen.nix-ide
+      mrmlnc.vscode-json5
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       redhat.ansible
