@@ -3,7 +3,7 @@ with lib;
 let
   cfg = config.modules.users.${username}.shell.fish;
 
-  defaultConfig = import ./defaultConfig.nix;
+  defaultConfig = (import ./defaultConfig.nix args);
 in {
    options.modules.users.${username}.shell.fish = {
     enable = mkEnableOption "${username} fish";
