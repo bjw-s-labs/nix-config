@@ -54,8 +54,9 @@ in
     package = pkgs-unstable.rtx;
   };
 
-  modules.users.bjw-s.virtualisation.docker = {
+  modules.users.bjw-s.virtualisation.colima = {
     enable = true;
+    enableService = true;
     package = pkgs-unstable.colima;
   };
 

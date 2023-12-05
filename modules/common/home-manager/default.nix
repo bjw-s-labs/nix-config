@@ -22,7 +22,8 @@ in
     ( import ../shell/starship {username=username;} )
     ( import ../shell/tmux {username=username;} )
 
-    ( import ../virtualisation/docker {username=username;} )
+    ( import ../virtualisation/colima {username=username;} )
+    ( import ../virtualisation/docker-cli {username=username;} )
   ];
 
   options.modules.users.${username}.home-manager = {
