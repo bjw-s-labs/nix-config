@@ -54,6 +54,11 @@ in
     package = pkgs-unstable.rtx;
   };
 
+  modules.users.bjw-s.virtualisation.docker = {
+    enable = true;
+    package = pkgs-unstable.colima;
+  };
+
   home-manager.users.bjw-s.home.packages = [
     pkgs.envsubst
     pkgs.go-task

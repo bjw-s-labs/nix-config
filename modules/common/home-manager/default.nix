@@ -21,6 +21,8 @@ in
     ( import ../shell/rtx {username=username;} )
     ( import ../shell/starship {username=username;} )
     ( import ../shell/tmux {username=username;} )
+
+    ( import ../virtualisation/docker {username=username;} )
   ];
 
   options.modules.users.${username}.home-manager = {
