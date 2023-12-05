@@ -21,7 +21,6 @@ in {
       programs = {
         fish.interactiveShellInit = mkIf cfg.enableFishIntegration (
           ''
-            ${getExe cfg.package} completion fish | source
             fish_add_path $HOME/.krew/bin
           ''
         );
