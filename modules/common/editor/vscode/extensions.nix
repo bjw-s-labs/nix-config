@@ -10,8 +10,8 @@ in
   "ms-python"."python" = vscode-utils.extensionFromVscodeMarketplace {
     name = "python";
     publisher = "ms-python";
-    version = "2023.20.0";
-    sha256 = "1qvpqs7mc5k6ldp9az1bqgfwl6hs0nk1wzwp3fdaqmm1vpg0662b";
+    version = "2023.22.0";
+    sha256 = "12wfrc668x3izs5jnrpsh4ywh77nc4lrsm54wih1n0nw90894wzn";
   };
 
   "ms-python"."vscode-pylance" = vscode-utils.extensionFromVscodeMarketplace {
@@ -38,8 +38,8 @@ in
   "ms-vscode-remote"."remote-containers" = vscode-utils.extensionFromVscodeMarketplace {
     name = "remote-containers";
     publisher = "ms-vscode-remote";
-    version = "0.321.0";
-    sha256 = "0p96z70nfzw829hijqcnw76b2pdn09j5rzhkhxqzvb9hla9f414n";
+    version = "0.327.0";
+    sha256 = "0asswm55bx5gpz08cgpmgfvnb0494irj0gsvzx5nwknqfzpj07lz";
   };
 
   "ms-vscode-remote"."remote-ssh" = vscode-utils.extensionFromVscodeMarketplace {
@@ -115,8 +115,8 @@ in
   "catppuccin"."catppuccin-vsc" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc";
     publisher = "catppuccin";
-    version = "3.8.0";
-    sha256 = "0hddzfspaizc5qb5a07aizww5khydskxsxlzkjf34xakryvdknza";
+    version = "3.8.1";
+    sha256 = "0334bxi2pgy70z3h05cy00cbwjnr72lid8gqnz8qk9hmwxwd0r91";
   };
 
   "mrmlnc"."vscode-json5" = vscode-utils.extensionFromVscodeMarketplace {
