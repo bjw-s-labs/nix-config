@@ -52,6 +52,7 @@ in {
       programs.gpg.enable = true;
 
       home.packages = [
+        pkgs.git-filter-repo
         pkgs.pinentry
         pkgs.tig
       ];
