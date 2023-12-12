@@ -28,6 +28,13 @@ in
     sha256 = "01s0vi2h917mqfpdrhqhp2ijwkibw95yk2js0l587wvajbbry2s9";
   };
 
+  "ms-azuretools"."vscode-docker" = vscode-utils.extensionFromVscodeMarketplace {
+    name = "vscode-docker";
+    publisher = "ms-azuretools";
+    version = "1.28.0";
+    sha256 = "0nmc3pdgxpmr6k2ksdczkv9bbwszncfczik0xjympqnd2k0ra9h0";
+  };
+
   "eamodio"."gitlens" = vscode-utils.extensionFromVscodeMarketplace {
     name = "gitlens";
     publisher = "eamodio";
@@ -115,8 +122,8 @@ in
   "catppuccin"."catppuccin-vsc" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc";
     publisher = "catppuccin";
-    version = "3.8.1";
-    sha256 = "0334bxi2pgy70z3h05cy00cbwjnr72lid8gqnz8qk9hmwxwd0r91";
+    version = "3.8.2";
+    sha256 = "034rwrd56xcgnzfqvpbdhhhil7ihxdqqhfh2wikk6c1xvw52wiwl";
   };
 
   "mrmlnc"."vscode-json5" = vscode-utils.extensionFromVscodeMarketplace {
