@@ -10,15 +10,15 @@ in
   "ms-python"."python" = vscode-utils.extensionFromVscodeMarketplace {
     name = "python";
     publisher = "ms-python";
-    version = "2023.22.0";
-    sha256 = "12wfrc668x3izs5jnrpsh4ywh77nc4lrsm54wih1n0nw90894wzn";
+    version = "2023.22.1";
+    sha256 = "1cg41vli6g330fjpjyxf65ipzh1xjx3s4pdcqzkzqgl57y505ndy";
   };
 
   "ms-python"."vscode-pylance" = vscode-utils.extensionFromVscodeMarketplace {
     name = "vscode-pylance";
     publisher = "ms-python";
-    version = "2023.11.10";
-    sha256 = "1i2xywjw4dghw0bbgk2z90zhgiy7sxdl4yv88399shjwyvbp2psf";
+    version = "2023.12.1";
+    sha256 = "03fr9zanhdsf3wirv65vb41swvdnxxaz8lviyjdbmzcw9yihf8dv";
   };
 
   "esbenp"."prettier-vscode" = vscode-utils.extensionFromVscodeMarketplace {
@@ -38,8 +38,8 @@ in
   "eamodio"."gitlens" = vscode-utils.extensionFromVscodeMarketplace {
     name = "gitlens";
     publisher = "eamodio";
-    version = "14.5.2";
-    sha256 = "0a6a0620pq2c23472nsa6z8bfxmwc0c4qfxy1bs2bawwap9s7lm8";
+    version = "14.6.1";
+    sha256 = "0nc6xv9rwfw92fnl089cvlrn3cqw21jkns8shkj1d0h1qiq4rh5q";
   };
 
   "ms-vscode-remote"."remote-containers" = vscode-utils.extensionFromVscodeMarketplace {
@@ -61,6 +61,13 @@ in
     publisher = "redhat";
     version = "1.14.0";
     sha256 = "0pww9qndd2vsizsibjsvscz9fbfx8srrj67x4vhmwr581q674944";
+  };
+
+  "github"."copilot" = vscode-utils.extensionFromVscodeMarketplace {
+    name = "copilot";
+    publisher = "github";
+    version = "1.143.0";
+    sha256 = "08rna6k82hcbpdaglfl47kix54i5b6a4vs5wa64gkr55896vh74i";
   };
 
   "golang"."go" = vscode-utils.extensionFromVscodeMarketplace {
@@ -87,8 +94,8 @@ in
   "hashicorp"."terraform" = vscode-utils.extensionFromVscodeMarketplace {
     name = "terraform";
     publisher = "hashicorp";
-    version = "2.29.0";
-    sha256 = "tGBs7+5ho+mvcJQF5gi/XfoiJ70MuCtFFOiPi2baae8=";
+    version = "2.29.1";
+    sha256 = "sha256-0XC0j0DQbRnu5k8HBgJSoYb7noj2jxFtgPvGazx0uyI=";
   };
 
   "ionutvmi"."path-autocomplete" = vscode-utils.extensionFromVscodeMarketplace {

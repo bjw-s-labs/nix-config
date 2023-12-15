@@ -12,6 +12,7 @@ in
       eamodio.gitlens
       golang.go
       fnando.linter
+      github.copilot
       hashicorp.terraform
       jnoortheen.nix-ide
       mrmlnc.vscode-json5
