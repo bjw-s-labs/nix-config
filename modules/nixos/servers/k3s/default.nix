@@ -15,15 +15,16 @@ in {
     services.k3s = {
       enable = true;
       role = "server";
-      package = pkgs-unstable.k3s_1_27;
+      package = pkgs-unstable.k3s_1_28;
     };
 
     services.k3s.extraFlags = toString [
       "--tls-san=${config.networking.hostName}.${deviceCfg.domain}"
       "--disable=local-storage"
       "--disable=traefik"
+      "--disable=metrics-server"
     ];
 
-    environment.systemPackages = [ pkgs-unstable.k3s_1_27 ];
+    environment.systemPackages = [ pkgs-unstable.k3s_1_28 ];
   };
 }
