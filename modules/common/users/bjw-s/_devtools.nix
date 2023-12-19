@@ -15,6 +15,7 @@ in
       github.copilot
       hashicorp.terraform
       jnoortheen.nix-ide
+      luisfontes19.vscode-swissknife
       mrmlnc.vscode-json5
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh

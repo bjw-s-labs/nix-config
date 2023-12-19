@@ -154,6 +154,13 @@ in
     sha256 = "1264027sjh9a112si0y0p3pk3y36shj5b4qkpsj207z7lbxqq0wg";
   };
 
+  "luisfontes19"."vscode-swissknife" = vscode-utils.extensionFromVscodeMarketplace {
+    name = "vscode-swissknife";
+    publisher = "luisfontes19";
+    version = "1.8.1";
+    sha256 = "1rpk8zayzkn2kg4jjdd2fy6xl50kib71dqg73v46326cr4dwxa7c";
+  };
+
   "signageos"."signageos-vscode-sops" = vscode-utils.extensionFromVscodeMarketplace {
     name = "signageos-vscode-sops";
     publisher = "signageos";
