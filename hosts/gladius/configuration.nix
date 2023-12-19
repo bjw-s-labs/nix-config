@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs-unstable, config, ... }:
 
+let
+  deviceCfg = config.modules.device;
+in
 {
   config = {
     modules = {
@@ -27,7 +30,13 @@
 
       monitoring.smartd.enable = true;
 
-      servers.k3s.enable = true;
+      servers.k3s = {
+        enable = true;
+        package = pkgs-unstable.k3s_1_28;
+        extraFlags = [
+          "--tls-san=nas.k8s.${deviceCfg.domain}"
+        ];
+      };
       servers.nfs.enable = true;
       servers.samba.enable = true;
       servers.samba.shares = {
