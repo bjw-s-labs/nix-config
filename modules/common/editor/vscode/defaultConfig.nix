@@ -87,9 +87,9 @@
   # Extension specific settings
   path-autocomplete.triggerOutsideStrings = true;
 
-  redhat.telemetry.enabled= false;
+  redhat.telemetry.enabled = false;
 
-  sops.beta = false;
+  sops-edit.tempFilePreExtension = "decrypted";
 
   todo-tree = {
     highlights.useColourScheme = true;

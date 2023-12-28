@@ -19,7 +19,7 @@ let
     gruntfuggly.todo-tree
     ionutvmi.path-autocomplete
     redhat.vscode-yaml
-    signageos.signageos-vscode-sops
+    shipitsmarter.sops-edit
     tamasfe.even-better-toml
   ];
   defaultConfig = (import ./defaultConfig.nix args);

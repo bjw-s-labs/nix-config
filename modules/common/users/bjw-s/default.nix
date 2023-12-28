@@ -88,6 +88,7 @@ in {
           ".rtx.toml"
           # Sops
           ".decrypted~*"
+          "*.decrypted.*"
           # Python virtualenvs
           ".venv"
         ];

@@ -2,8 +2,10 @@
 {
   environment.systemPackages = [
     pkgs.curl
+    pkgs.findutils
+    pkgs.jo
     pkgs.jq
-    pkgs.yq
+    pkgs.yq-go
     pkgs.wget
   ];
 }

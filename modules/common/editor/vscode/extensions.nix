@@ -73,8 +73,8 @@ in
   "golang"."go" = vscode-utils.extensionFromVscodeMarketplace {
     name = "go";
     publisher = "golang";
-    version = "0.40.0";
-    sha256 = "1k2zv49pam436cgvb970dc9n4xpdkd07lp8jllrsx5vnx7m2ml52";
+    version = "0.40.1";
+    sha256 = "0844kxbi7qi79wal0cqcd4wiygc42fyhamn33lsx2ms4yj5jxri9";
   };
 
   "gruntfuggly"."todo-tree" = vscode-utils.extensionFromVscodeMarketplace {
@@ -161,17 +161,17 @@ in
     sha256 = "1rpk8zayzkn2kg4jjdd2fy6xl50kib71dqg73v46326cr4dwxa7c";
   };
 
-  "signageos"."signageos-vscode-sops" = vscode-utils.extensionFromVscodeMarketplace {
-    name = "signageos-vscode-sops";
-    publisher = "signageos";
-    version = "0.8.0";
-    sha256 = "1mjvlv3yr2ilyki5ydj8kn851rr1lmf05rm9rkv8dihhyqmdpiid";
-  };
-
   "elagil"."pre-commit-helper" = vscode-utils.extensionFromVscodeMarketplace {
     name = "pre-commit-helper";
     publisher = "elagil";
     version = "0.4.3";
     sha256 = "1877k35biy72sh0c5f890z0mh36sr2cvd3d1mmw9mb2mdfq6xyqk";
+  };
+
+  "shipitsmarter"."sops-edit" = vscode-utils.extensionFromVscodeMarketplace {
+    name = "sops-edit";
+    publisher = "shipitsmarter";
+    version = "1.0.0";
+    sha256 = "0b2z9khiwrpf6gxdb9y315ayqkibvgixmvx82in5rlp8pndb6sq4";
   };
 }
