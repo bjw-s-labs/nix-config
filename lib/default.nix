@@ -17,7 +17,7 @@ in {
             inherit inputs system;
             myConfig = { hostname = hostname; };
             # nvfetcherPath = ../packages/_sources/generated.nix;
-            # myPkgs = inputs.self.legacyPackages.${system};
+            myPkgs = inputs.self.legacyPackages.${system};
             pkgs-unstable = import inputs.nixpkgs-unstable {
               inherit system;
               config.allowUnfree = true;
@@ -51,6 +51,7 @@ in {
           _module.args = {
             inherit inputs system;
             myConfig = { hostname = hostname; };
+            myPkgs = inputs.self.legacyPackages.${system};
             pkgs-unstable = import inputs.nixpkgs-unstable {
               inherit system;
               config.allowUnfree = true;

@@ -75,5 +75,7 @@ in
   home-manager.users.bjw-s.home.packages = [
     pkgs.envsubst
     pkgs.go-task
+  ] ++ [
+    myPkgs.harlequin
   ];
 }

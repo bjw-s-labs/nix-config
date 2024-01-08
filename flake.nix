@@ -43,9 +43,13 @@
       perSystem = {
         inputs',
         pkgs,
+        self',
         ...
       }: {
-        # legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
+        legacyPackages = import ./packages { inherit inputs' pkgs; };
+        packages = {
+          harlequin = self'.legacyPackages.harlequin;
+        };
         # devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
       };
 

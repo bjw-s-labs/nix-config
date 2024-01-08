@@ -1,4 +1,4 @@
-args@{ pkgs, pkgs-unstable, vscode-extensions, lib, config, ... }:
+args@{ pkgs, pkgs-unstable, vscode-extensions, myPkgs, lib, config, ... }:
 with lib;
 
 let
