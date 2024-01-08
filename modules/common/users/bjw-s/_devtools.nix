@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ lib, pkgs, pkgs-unstable, myPkgs, ... }:
 
 let
   vscode-extensions = (import ../../editor/vscode/extensions.nix){pkgs = pkgs;};
@@ -12,11 +12,12 @@ in
       eamodio.gitlens
       golang.go
       fnando.linter
-      github.copilot
+      # github.copilot
       hashicorp.terraform
       jnoortheen.nix-ide
       luisfontes19.vscode-swissknife
       mrmlnc.vscode-json5
+      ms-azuretools.vscode-docker
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       redhat.ansible
@@ -25,6 +26,15 @@ in
     ]);
 
     config = {
+      # Editor settings
+      editor = {
+        fontFamily = lib.strings.concatStringsSep "," [
+          "'Monaspace Krypton'"
+          "'Font Awesome 6 Free Solid'"
+        ];
+        fontLigatures = "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss06'";
+      };
+
       # Extension settings
       ansible = {
         python.interpreterPath = ".venv/bin/python";

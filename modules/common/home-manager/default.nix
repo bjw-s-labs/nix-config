@@ -10,6 +10,8 @@ in
     ( import ../editor/nvim {username=username;} )
     ( import ../editor/vscode {username=username;} )
 
+    ( import ../fonts/monaspace {username=username;} )
+
     ( import ../kubernetes/k9s {username=username;} )
     ( import ../kubernetes/krew {username=username;} )
     ( import ../kubernetes/kubecm {username=username;} )

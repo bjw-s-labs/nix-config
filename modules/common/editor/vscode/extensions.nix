@@ -66,8 +66,8 @@ in
   "github"."copilot" = vscode-utils.extensionFromVscodeMarketplace {
     name = "copilot";
     publisher = "github";
-    version = "1.143.0";
-    sha256 = "08rna6k82hcbpdaglfl47kix54i5b6a4vs5wa64gkr55896vh74i";
+    version = "1.145.0";
+    sha256 = "11qkgymxx72514pdji5npyjyv16wihqdfpnw90q09r6rw2xvd71h";
   };
 
   "golang"."go" = vscode-utils.extensionFromVscodeMarketplace {
@@ -129,8 +129,8 @@ in
   "catppuccin"."catppuccin-vsc" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc";
     publisher = "catppuccin";
-    version = "3.8.2";
-    sha256 = "034rwrd56xcgnzfqvpbdhhhil7ihxdqqhfh2wikk6c1xvw52wiwl";
+    version = "3.10.1";
+    sha256 = "1i0gz1hc5l0q1i8c2j6zdr1s2iwjg83bhrfg5lphxbs3ls16xgbs";
   };
 
   "mrmlnc"."vscode-json5" = vscode-utils.extensionFromVscodeMarketplace {
@@ -143,8 +143,8 @@ in
   "catppuccin"."catppuccin-vsc-icons" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc-icons";
     publisher = "catppuccin";
-    version = "0.30.0";
-    sha256 = "035rl1kx565h9s0xlh20pr6p26g9g9zy2l4zag0bn653lbm51jhg";
+    version = "0.33.0";
+    sha256 = "0kyx63q83w9yb10mnapd83q863dkzx8n8hdljrrl15ml5hhimk2i";
   };
 
   "jnoortheen"."nix-ide" = vscode-utils.extensionFromVscodeMarketplace {
@@ -164,8 +164,8 @@ in
   "elagil"."pre-commit-helper" = vscode-utils.extensionFromVscodeMarketplace {
     name = "pre-commit-helper";
     publisher = "elagil";
-    version = "0.4.3";
-    sha256 = "1877k35biy72sh0c5f890z0mh36sr2cvd3d1mmw9mb2mdfq6xyqk";
+    version = "0.5.0";
+    sha256 = "05cs1ndnha9dgv1ys23z81ajk300wpixqmks0lfmrj1zwyjg2wlj";
   };
 
   "shipitsmarter"."sops-edit" = vscode-utils.extensionFromVscodeMarketplace {

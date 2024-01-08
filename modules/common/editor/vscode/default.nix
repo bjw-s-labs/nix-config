@@ -39,36 +39,38 @@ in {
     };
   };
 
-  config.home-manager.users.${username} = { lib, ... }: mkIf cfg.enable {
-    programs.vscode = {
-      enable = true;
-      package = cfg.package;
-      enableExtensionUpdateCheck = false;
+  config = mkIf cfg.enable {
+    home-manager.users.${username} = {lib, ... }: mkIf cfg.enable {
+      programs.vscode = {
+        enable = true;
+        package = cfg.package;
+        enableExtensionUpdateCheck = false;
 
-      extensions = mkMerge [
-        defaultExtensions
-        cfg.extensions
-      ];
+        extensions = mkMerge [
+          defaultExtensions
+          cfg.extensions
+        ];
 
-      userSettings = mkMerge [
-        defaultConfig
-        cfg.config
-      ];
-    };
+        userSettings = mkMerge [
+          defaultConfig
+          cfg.config
+        ];
+      };
 
-    home = {
-      activation = {
-        removeExistingVSCodeSettings = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-          rm -rf "${configFilePath}"
-        '';
+      home = {
+        activation = {
+          removeExistingVSCodeSettings = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+            rm -rf "${configFilePath}"
+          '';
 
-        overwriteVSCodeSymlink = let
-          userSettings = config.home-manager.users.${username}.programs.vscode.userSettings;
-          jsonSettings = pkgs.writeText "tmp_vscode_settings" (builtins.toJSON userSettings);
-        in lib.hm.dag.entryAfter [ "linkGeneration" ] ''
-          rm -rf "${configFilePath}"
-          cat ${jsonSettings} | ${pkgs.jq}/bin/jq --monochrome-output > "${configFilePath}"
-        '';
+          overwriteVSCodeSymlink = let
+            userSettings = config.home-manager.users.${username}.programs.vscode.userSettings;
+            jsonSettings = pkgs.writeText "tmp_vscode_settings" (builtins.toJSON userSettings);
+          in lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+            rm -rf "${configFilePath}"
+            cat ${jsonSettings} | ${pkgs.jq}/bin/jq --monochrome-output > "${configFilePath}"
+          '';
+        };
       };
     };
   };

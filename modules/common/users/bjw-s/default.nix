@@ -94,6 +94,8 @@ in {
         ];
       };
 
+      modules.users.bjw-s.fonts.monaspace.enable = true;
+
       modules.users.bjw-s.editor.nvim.enable = true;
       modules.users.bjw-s.shell.starship.enable = true;
       modules.users.bjw-s.shell.tmux.enable = true;
