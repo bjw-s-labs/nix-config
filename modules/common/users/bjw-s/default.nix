@@ -86,6 +86,8 @@ in {
           ".tool-versions"
           # rtx
           ".rtx.toml"
+          # mise
+          ".mise.toml"
           # Sops
           ".decrypted~*"
           "*.decrypted.*"

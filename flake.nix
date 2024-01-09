@@ -49,6 +49,7 @@
         legacyPackages = import ./packages { inherit inputs' pkgs; };
         packages = {
           harlequin = self'.legacyPackages.harlequin;
+          mise = self'.legacyPackages.mise;
         };
         # devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
       };

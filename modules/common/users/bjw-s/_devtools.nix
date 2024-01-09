@@ -61,9 +61,12 @@ in
     };
   };
 
-  modules.users.bjw-s.shell.rtx = {
+  modules.users.bjw-s.shell.mise = {
     enable = true;
-    package = pkgs-unstable.rtx;
+    package = myPkgs.mise;
+    config = {
+      experimental = true;
+    };
   };
 
   modules.users.bjw-s.virtualisation.colima = {
