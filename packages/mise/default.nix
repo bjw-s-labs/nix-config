@@ -14,16 +14,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "mise";
-  version = "2024.1.14";
+  version = "2024.1.16";
 
   src = fetchFromGitHub {
     owner = "jdx";
     repo = "mise";
     rev = "v${version}";
-    hash = "sha256-73ZaVf5r39TQ6oowhzsACE4/6vEtYcKKKpw3aSMpBMs=";
+    hash = "sha256-bG4OFlU5egWjlZ1sgimGxwacs31OwIp3wU5LID/R3Os=";
   };
 
-  cargoHash = "sha256-7jBnAahJ53PIxu4yCAnqRgORFS5CONpM4Yl6L4IZVIo=";
+  cargoHash = "sha256-hGWJBJRc9J2r2PelqfgJBNA4i8s1iU8pLidwYBfhlgw=";
 
   nativeBuildInputs = [ installShellFiles pkg-config ];
   buildInputs = [ openssl  ] ++ lib.optionals stdenv.isDarwin [ pkgs.darwin.apple_sdk.frameworks.Security pkgs.darwin.apple_sdk.frameworks.SystemConfiguration ];
