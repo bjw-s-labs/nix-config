@@ -66,6 +66,7 @@ in
     package = myPkgs.mise;
     config = {
       experimental = true;
+      python_venv_auto_create = true;
     };
   };
 
