@@ -21,7 +21,6 @@ in
     ( import ../shell/fish {username=username;} )
     ( import ../shell/git {username=username;} )
     ( import ../shell/mise {username=username;} )
-    ( import ../shell/rtx {username=username;} )
     ( import ../shell/starship {username=username;} )
     ( import ../shell/tmux {username=username;} )
 

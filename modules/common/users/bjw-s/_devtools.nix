@@ -63,7 +63,7 @@ in
 
   modules.users.bjw-s.shell.mise = {
     enable = true;
-    package = myPkgs.mise;
+    package = pkgs-unstable.mise;
     config = {
       experimental = true;
       python_venv_auto_create = true;

@@ -10,7 +10,6 @@ in {
     enable = mkEnableOption "${username} mise";
 
     # TODO: This will probably not work until nixpkgs adds the mise package
-    # Use myPkgs.mise instead until then
     package = mkPackageOption pkgs "mise" { };
 
     enableFishIntegration = mkEnableOption "Fish Integration" // {
