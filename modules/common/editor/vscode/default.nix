@@ -1,4 +1,4 @@
-{ username }: args@{pkgs, lib, config, ... }:
+{ username }: args@{pkgs, lib, myLib, config, ... }:
 with lib;
 
 let
@@ -51,7 +51,7 @@ in {
           cfg.extensions
         ];
 
-        userSettings = mkMerge [
+        userSettings = myLib.recursiveMerge [
           defaultConfig
           cfg.config
         ];

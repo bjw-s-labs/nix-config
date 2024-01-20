@@ -5,11 +5,11 @@
       enabled = true;
     };
     defaultFormatter = "esbenp.prettier-vscode";
-    fontFamily = lib.mkDefault(lib.strings.concatStringsSep "," [
+    fontFamily = lib.strings.concatStringsSep "," [
       "'FiraCode Nerd Font'"
       "'Font Awesome 6 Free Solid'"
-    ]);
-    fontLigatures = lib.mkDefault true;
+    ];
+    fontLigatures = true;
     formatOnSave = true;
     guides = {
       bracketPairs = true;

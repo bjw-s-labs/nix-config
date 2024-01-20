@@ -38,8 +38,8 @@ in
   "eamodio"."gitlens" = vscode-utils.extensionFromVscodeMarketplace {
     name = "gitlens";
     publisher = "eamodio";
-    version = "14.6.1";
-    sha256 = "0nc6xv9rwfw92fnl089cvlrn3cqw21jkns8shkj1d0h1qiq4rh5q";
+    version = "14.7.0";
+    sha256 = "07f9fryaci8lsrdahgll5yhlzf5rhscpy1zd258hi211ymvkxlmy";
   };
 
   "ms-vscode-remote"."remote-containers" = vscode-utils.extensionFromVscodeMarketplace {
@@ -66,8 +66,8 @@ in
   "github"."copilot" = vscode-utils.extensionFromVscodeMarketplace {
     name = "copilot";
     publisher = "github";
-    version = "1.145.0";
-    sha256 = "11qkgymxx72514pdji5npyjyv16wihqdfpnw90q09r6rw2xvd71h";
+    version = "1.152.0";
+    sha256 = "0nxisc7c1bf6wqywdx9smpak82p00r19mapn24pbmhis08jh9g7r";
   };
 
   "golang"."go" = vscode-utils.extensionFromVscodeMarketplace {
@@ -94,8 +94,8 @@ in
   "hashicorp"."terraform" = vscode-utils.extensionFromVscodeMarketplace {
     name = "terraform";
     publisher = "hashicorp";
-    version = "2.29.1";
-    sha256 = "sha256-0XC0j0DQbRnu5k8HBgJSoYb7noj2jxFtgPvGazx0uyI=";
+    version = "2.29.2";
+    sha256 = "sha256-wIn9Cj4CleSpMOfHfdpqzgaW3kluXrhBLirSrSLiERE=";
   };
 
   "ionutvmi"."path-autocomplete" = vscode-utils.extensionFromVscodeMarketplace {
@@ -129,8 +129,8 @@ in
   "catppuccin"."catppuccin-vsc" = vscode-utils.extensionFromVscodeMarketplace {
     name = "catppuccin-vsc";
     publisher = "catppuccin";
-    version = "3.10.1";
-    sha256 = "1i0gz1hc5l0q1i8c2j6zdr1s2iwjg83bhrfg5lphxbs3ls16xgbs";
+    version = "3.11.0";
+    sha256 = "12bzx1pv9pxbm08dhvl8pskpz1vg2whxmasl0qk2x54swa2rhi4d";
   };
 
   "mrmlnc"."vscode-json5" = vscode-utils.extensionFromVscodeMarketplace {
