@@ -84,8 +84,6 @@ in {
           "Thumbs.db"
           # asdf
           ".tool-versions"
-          # rtx
-          ".rtx.toml"
           # mise
           ".mise.toml"
           # Sops
