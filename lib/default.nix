@@ -1,6 +1,21 @@
 { inputs, ... }: let
   inherit (inputs.nixpkgs) lib;
+
+  recursiveMerge = attrList:
+    let f = attrPath:
+      lib.zipAttrsWith (n: values:
+        if lib.tail values == []
+          then lib.head values
+        else if lib.all lib.isList values
+          then lib.unique (lib.concatLists values)
+        else if lib.all lib.isAttrs values
+          then f (attrPath ++ [n]) values
+        else lib.last values
+      );
+    in f [] attrList;
+
 in {
+
   mkNixosSystem = system: hostname:
     lib.nixosSystem {
       inherit system;
@@ -22,6 +37,9 @@ in {
               inherit system;
               config.allowUnfree = true;
               overlays = [ (import ../packages/overlay.nix {inherit inputs system;}) ];
+            };
+            myLib = {
+              recursiveMerge = recursiveMerge;
             };
           };
         }
@@ -56,6 +74,9 @@ in {
               inherit system;
               config.allowUnfree = true;
               overlays = [ (import ../packages/overlay.nix {inherit inputs system;}) ];
+            };
+            myLib = {
+              recursiveMerge = recursiveMerge;
             };
           };
         }
