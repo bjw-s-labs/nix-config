@@ -2,12 +2,12 @@
 with lib;
 
 let
-  cfg = config.modules.users.${username}.kubernetes.k9s;
+  cfg = config.modules.users.${username}.kubernetes.stern;
 
 in {
-  options.modules.users.${username}.kubernetes.k9s = {
-    enable = mkEnableOption "${username} k9s";
-    package = mkPackageOption pkgs "k9s" { };
+  options.modules.users.${username}.kubernetes.stern = {
+    enable = mkEnableOption "${username} stern";
+    package = mkPackageOption pkgs "stern" { };
   };
 
   config = mkIf cfg.enable {
