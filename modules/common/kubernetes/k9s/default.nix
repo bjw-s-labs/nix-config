@@ -1,4 +1,4 @@
-{ username }: args@{pkgs,lib, myLib, myPkgs, config, ... }:
+{ username }: args@{pkgs, lib, myLib, config, ... }:
 with lib;
 
 let

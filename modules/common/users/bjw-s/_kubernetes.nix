@@ -1,4 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 let
   vscode-extensions = (import ../../editor/vscode/extensions.nix){pkgs = pkgs;};
 in

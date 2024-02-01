@@ -1,4 +1,12 @@
-args@{ pkgs, pkgs-unstable, vscode-extensions, myPkgs, lib, config, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  config,
+  myPackages,
+  ...
+}:
+
 with lib;
 
 let
@@ -19,8 +27,8 @@ in {
   };
 
   config = mkIf (cfg.enable) (mkMerge [
-    (mkIf (pkgs.stdenv.isLinux) (import ./nixos.nix args))
-    (mkIf (pkgs.stdenv.isDarwin) (import ./darwin.nix args))
+    (mkIf (pkgs.stdenv.isLinux) (import ./nixos.nix {inherit config;}))
+    (mkIf (pkgs.stdenv.isDarwin) (import ./darwin.nix))
 
     {
       users.users.bjw-s = {
@@ -101,7 +109,7 @@ in {
       modules.users.bjw-s.shell.tmux.enable = true;
     }
 
-    (mkIf (cfg.enableKubernetesTools) (import ./_kubernetes.nix args))
-    (mkIf (cfg.enableDevTools) (import ./_devtools.nix args))
+    (mkIf (cfg.enableKubernetesTools) (import ./_kubernetes.nix {inherit pkgs; inherit pkgs-unstable;}))
+    (mkIf (cfg.enableDevTools) (import ./_devtools.nix {inherit pkgs; inherit pkgs-unstable; inherit lib; inherit myPackages;}))
   ]);
 }

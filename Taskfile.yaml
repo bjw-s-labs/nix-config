@@ -5,6 +5,9 @@ includes:
   sops:
     taskfile: ".taskfiles/sops"
     dir: .taskfiles/sops
+  nix:
+    taskfile: ".taskfiles/nix"
+    dir: "{{.ROOT_DIR}}"
 
 tasks:
   default:

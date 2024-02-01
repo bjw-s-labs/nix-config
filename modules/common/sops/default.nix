@@ -1,4 +1,4 @@
-{ username }: {lib, pkgs, config, inputs, ... }:
+{ username }: {lib, pkgs, config, sops-nix, ... }:
 with lib;
 let
   cfg = config.modules.users.${username}.sops;
@@ -20,7 +20,7 @@ in {
   config = {
     home-manager.users.${username} = {
       imports = [
-        inputs.sops-nix.homeManagerModules.sops
+        sops-nix.homeManagerModules.sops
       ];
 
       home.packages = [

@@ -1,5 +1,10 @@
-{ lib, pkgs, pkgs-unstable, myPkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  pkgs-unstable,
+  myPackages,
+  ...
+}:
 let
   vscode-extensions = (import ../../editor/vscode/extensions.nix){pkgs = pkgs;};
 in
@@ -79,7 +84,8 @@ in
   home-manager.users.bjw-s.home.packages = [
     pkgs.envsubst
     pkgs.go-task
+    pkgs.nvd
   ] ++ [
-    myPkgs.harlequin
+    myPackages.harlequin
   ];
 }
