@@ -15,19 +15,19 @@ in
 
     extensions = (with vscode-extensions; [
       eamodio.gitlens
-      golang.go
       fnando.linter
       # github.copilot
-      hashicorp.terraform
+      golang.go
       jnoortheen.nix-ide
+      hashicorp.terraform
       luisfontes19.vscode-swissknife
-      mrmlnc.vscode-json5
       ms-azuretools.vscode-docker
+      ms-python.python
+      ms-python.vscode-pylance
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       redhat.ansible
-      ms-python.python
-      ms-python.vscode-pylance
+      tudoudou.json5-for-vscode
     ]);
 
     config = {
