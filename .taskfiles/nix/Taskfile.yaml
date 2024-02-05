@@ -13,10 +13,12 @@ tasks:
         vars:
           host: "{{ .host }}"
       - task: .prompt_to_continue
-      - nix run nix-darwin -- switch --flake "{{.ROOT_DIR}}/#{{.host}}"
+      - darwin-rebuild switch --flake "{{.ROOT_DIR}}/#{{.host}}"
     preconditions:
       - sh: which nix
         msg: "nix not found"
+      - sh: which darwin-rebuild
+        msg: "darwin-rebuild not found"
 
   build-darwin:
     desc: Build nix-darwin configuration
@@ -25,11 +27,13 @@ tasks:
       vars:
         - host
     cmds:
-      - nix run nix-darwin -- build --flake "{{.ROOT_DIR}}/#{{.host}}"
+      - darwin-rebuild build --flake "{{.ROOT_DIR}}/#{{.host}}"
       - nvd diff /run/current-system result
     preconditions:
       - sh: which nix
         msg: "nix not found"
+      - sh: which darwin-rebuild
+        msg: "darwin-rebuild not found"
 
   deploy-nixos:
     desc: Build and deploy nixos configuration using deploy-rs
@@ -41,10 +45,12 @@ tasks:
       vars:
         - host
     cmds:
-      - nix run github:serokell/deploy-rs -- "{{.ROOT_DIR}}/#{{.host}}" --interactive --skip-checks
+      - deploy "{{.ROOT_DIR}}/#{{.host}}" --interactive --skip-checks
     preconditions:
       - sh: which nix
         msg: "nix not found"
+      - sh: which deploy
+        msg: "deploy-rs not found"
 
   .prompt_to_continue:
     internal: true

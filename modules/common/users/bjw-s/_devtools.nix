@@ -82,6 +82,7 @@ in
   };
 
   home-manager.users.bjw-s.home.packages = [
+    pkgs-unstable.deploy-rs.deploy-rs
     pkgs.envsubst
     pkgs.go-task
     pkgs.nvd
