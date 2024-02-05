@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
-  programs.lsd.enable = true;
+  programs.eza = {
+    enable = true;
+    icons = true;
+    enableAliases = true;
+  };
   programs.zoxide.enable = true;
   programs.fish = {
     enable = true;
@@ -19,13 +23,6 @@
     ];
 
     shellAliases = {
-      # lsd
-      ls = "lsd";
-      ll = "lsd -l";
-      la = "lsd -a";
-      lt = "lsd --tree";
-      lla = "lsd -la";
-
       # other
       df = "df -h";
       du = "du -h";
