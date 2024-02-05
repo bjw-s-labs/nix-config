@@ -13,6 +13,8 @@ in
       };
 
       users.bjw-s.enable = true;
+      users.manyie.enable = true;
+
       users.groups = {
         external-services = {
           gid = 65542;
