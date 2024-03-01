@@ -18,6 +18,7 @@ in
     ( import ../kubernetes/stern {username=username;} )
 
     ( import ../shell/atuin {username=username;} )
+    ( import ../shell/bat {username=username;} )
     ( import ../shell/fish {username=username;} )
     ( import ../shell/git {username=username;} )
     ( import ../shell/mise {username=username;} )

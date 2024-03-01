@@ -55,6 +55,11 @@ in {
         };
       };
 
+      modules.users.bjw-s.shell.bat = {
+        enable = true;
+        enableFishIntegration = true;
+      };
+
       modules.users.bjw-s.shell.fish = {
         enable = true;
       };
