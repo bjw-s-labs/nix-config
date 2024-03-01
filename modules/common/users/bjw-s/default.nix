@@ -59,7 +59,10 @@ in {
         enable = true;
         enableFishIntegration = true;
       };
-
+      modules.users.bjw-s.shell.btop = {
+        enable = true;
+        enableFishIntegration = true;
+      };
       modules.users.bjw-s.shell.fish = {
         enable = true;
       };
