@@ -117,7 +117,7 @@ in {
       modules.users.bjw-s.shell.tmux.enable = true;
     }
 
-    (mkIf (cfg.enableKubernetesTools) (import ./_kubernetes.nix {inherit pkgs; inherit pkgs-unstable;}))
+    (mkIf (cfg.enableKubernetesTools) (import ./_kubernetes.nix {inherit pkgs-unstable;}))
     (mkIf (cfg.enableDevTools) (import ./_devtools.nix {inherit pkgs; inherit pkgs-unstable; inherit lib; inherit myPackages;}))
   ]);
 }

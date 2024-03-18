@@ -1,8 +1,7 @@
-{ username }: args@{pkgs, lib, myLib, config, ... }:
+{ username }: args@{pkgs, lib, myLib, config, vscode-extensions, ... }:
 with lib;
 
 let
-  vscode-extensions = (import ./extensions.nix){pkgs = pkgs;};
   cfg = config.modules.users.${username}.editor.vscode;
 
   userDir = if pkgs.stdenv.hostPlatform.isDarwin then
@@ -11,17 +10,6 @@ let
     "${config.xdg.configHome}/Code/User";
   configFilePath = "${userDir}/settings.json";
 
-  defaultExtensions = with vscode-extensions; [
-    catppuccin.catppuccin-vsc
-    catppuccin.catppuccin-vsc-icons
-    elagil.pre-commit-helper
-    esbenp.prettier-vscode
-    gruntfuggly.todo-tree
-    ionutvmi.path-autocomplete
-    redhat.vscode-yaml
-    shipitsmarter.sops-edit
-    tamasfe.even-better-toml
-  ];
   defaultConfig = (import ./defaultConfig.nix args);
 
 in {
@@ -29,10 +17,6 @@ in {
     enable = mkEnableOption "${username} vscode";
     package = mkPackageOption pkgs "vscode" { };
 
-    extensions = mkOption {
-      type = types.listOf types.package;
-      default = [];
-    };
     config = mkOption {
       type = types.attrs;
       default = {};
@@ -45,11 +29,6 @@ in {
         enable = true;
         package = cfg.package;
         enableExtensionUpdateCheck = false;
-
-        extensions = mkMerge [
-          defaultExtensions
-          cfg.extensions
-        ];
 
         userSettings = myLib.recursiveMerge [
           defaultConfig

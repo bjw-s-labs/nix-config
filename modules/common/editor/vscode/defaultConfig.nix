@@ -10,7 +10,7 @@
       "'Font Awesome 6 Free Solid'"
     ];
     fontLigatures = true;
-    formatOnSave = true;
+    # formatOnSave = true;
     guides = {
       bracketPairs = true;
       bracketPairsHorizontal = true;
@@ -28,8 +28,6 @@
     confirmDragAndDrop = false;
   };
 
-  extensions.autoUpdate = false;
-
   files = {
     associations = {};
     autoSave = "onFocusChange";
@@ -46,6 +44,7 @@
 
   update = {
     showReleaseNotes = false;
+    mode = "manual";
   };
 
   window = {
@@ -57,7 +56,7 @@
 
   workbench = {
     colorTheme = "Catppuccin Macchiato";
-    iconTheme = "catppuccin-macchiato";
+    iconTheme = "catppuccin-perfect-macchiato";
     sideBar = {
       location = "left";
     };
@@ -67,7 +66,7 @@
     };
   };
 
-  "workbench.iconTheme" = "catppuccin-macchiato";
+  "workbench.iconTheme" = "catppuccin-perfect-macchiato";
 
   # Language settings
   nix = {
