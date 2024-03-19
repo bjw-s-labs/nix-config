@@ -1,29 +1,29 @@
-{ self
-, deploy-rs
-, nixpkgs
-, ...
+{
+  self,
+  deploy-rs,
+  ...
 }:
 let
-  inherit (nixpkgs) lib;
+  deployConfig = name: system: cfg: {
+    hostname = "${name}.bjw-s.casa";
+    sshOpts = cfg.sshOpts or [];
 
-  genNode = hostName: nixosCfg:
-    let
-      inherit (self.hosts.${hostName}) address hostPlatform remoteBuild type;
-      inherit (deploy-rs.lib.${hostPlatform}) activate;
-    in
-    {
-      profiles.system.path = activate.${type} nixosCfg;
-      inherit remoteBuild;
-      hostname = address;
+    profiles = {
+      system = {
+        sshUser = cfg.sshUser;
+        path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.${name};
+        user = "root";
+      };
     };
+
+    remoteBuild = cfg.remoteBuild or false;
+    autoRollback = cfg.autoRollback or false;
+    magicRollback = cfg.magicRollback or true;
+  };
 in
 {
-  autoRollback = false;
-  magicRollback = true;
-  sshOpts = [
-    "-A"
-  ];
-  user = "root";
-  nodes = lib.mapAttrs
-    genNode (self.nixosConfigurations or { });
+  deploy.nodes = {
+    gladius = deployConfig "gladius" "x86_64-linux" {sshUser = "bjw-s"; remoteBuild = true;};
+  };
+  checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
 }
