@@ -1,0 +1,127 @@
+{
+  "[go]": {
+    "editor": {
+      "defaultFormatter": "golang.go"
+    },
+    "toolsManagement": {
+      "autoUpdate": true
+    }
+  },
+  "[terraform]": {
+    "editor": {
+      "defaultFormatter": "hashicorp.terraform"
+    }
+  },
+  "ansible": {
+    "python": {
+      "interpreterPath": ".venv/bin/python"
+    }
+  },
+  "editor": {
+    "bracketPairColorization": {
+      "enabled": true
+    },
+    "defaultFormatter": "esbenp.prettier-vscode",
+    "fontFamily": "'Monaspace Krypton','Font Awesome 6 Free Solid'",
+    "fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss06'",
+    "guides": {
+      "bracketPairs": true,
+      "bracketPairsHorizontal": true,
+      "highlightActiveBracketPair": true
+    },
+    "stickyScroll": {
+      "enabled": true
+    },
+    "tabSize": 2
+  },
+  "explorer": {
+    "compactFolders": false,
+    "confirmDelete": false,
+    "confirmDragAndDrop": false
+  },
+  "files": {
+    "associations": {},
+    "autoSave": "onFocusChange",
+    "eol": "\n",
+    "insertFinalNewline": true,
+    "trimFinalNewlines": true,
+    "trimTrailingWhitespace": true
+  },
+  "git": {
+    "autofetch": true,
+    "confirmSync": false
+  },
+  "linter": {
+    "linters": {
+      "yamllint": {
+        "configFiles": [
+          ".yamllint.yml",
+          ".yamllint.yaml",
+          ".yamllint",
+          ".ci/yamllint/.yamllint.yaml"
+        ]
+      }
+    }
+  },
+  "nix": {
+    "enableLanguageServer": true,
+    "serverPath": "nil"
+  },
+  "path-autocomplete": {
+    "triggerOutsideStrings": true
+  },
+  "qalc": {
+    "output": {
+      "displayCommas": false,
+      "notation": "auto",
+      "precision": 0
+    }
+  },
+  "redhat": {
+    "telemetry": {
+      "enabled": false
+    }
+  },
+  "sops-edit": {
+    "tempFilePreExtension": "decrypted"
+  },
+  "terminal.integrated.inheritEnv": true,
+  "todo-tree": {
+    "highlights": {
+      "useColourScheme": true
+    },
+    "tree": {
+      "expanded": true
+    }
+  },
+  "update": {
+    "mode": "manual",
+    "showReleaseNotes": false
+  },
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "disabled"
+  },
+  "window": {
+    "commandCenter": false,
+    "newWindowDimensions": "maximized",
+    "restoreWindows": "none",
+    "titleBarStyle": "custom"
+  },
+  "workbench": {
+    "colorTheme": "Catppuccin Macchiato",
+    "iconTheme": "catppuccin-perfect-macchiato",
+    "sideBar": {
+      "location": "left"
+    },
+    "startupEditor": "newUntitledFile",
+    "tree": {
+      "renderIndentGuides": "none"
+    }
+  },
+  "workbench.iconTheme": "catppuccin-perfect-macchiato",
+  "codeium.enableConfig": {
+    "*": true,
+    "nix": true,
+    "helm": true
+  }
+}

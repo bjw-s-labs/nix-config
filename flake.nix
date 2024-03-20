@@ -1,17 +1,6 @@
 {
   description = "bjw-s Nix Flake";
 
-  nixConfig = {
-    extra-trusted-substituters = [
-      "https://bjw-s.cachix.org"
-      "https://nix-community.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "bjw-s.cachix.org-1:dWyzjMYlnKeq01PplRWadakXfZQBoxJN7zGO6/HwsPs="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
-
   inputs = {
     # Nixpkgs and unstable
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -29,14 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-fast-build
-    nix-fast-build = {
-      url = "github:Mic92/nix-fast-build";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     # deploy-rs
     deploy-rs = {
       url = "github:serokell/deploy-rs";
@@ -50,44 +31,73 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # NixVim
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # VSCode community extensions
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Rust toolchain overlay
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nix-darwin,
+    nixvim,
+    nix-vscode-extensions,
+    deploy-rs,
+    sops-nix,
+    rust-overlay,
+    ...
+  } @inputs:
   let
-    forAllSystems = nixpkgs.lib.genAttrs [
-      "aarch64-darwin"
-      "aarch64-linux"
-      "x86_64-darwin"
-      "x86_64-linux"
-    ];
+    supportedSystems = ["x86_64-linux" "aarch64-darwin"];
+    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+    overlays = import ./overlays {inherit inputs;};
+    mkSystemLib = import ./lib/mkSystem.nix {inherit inputs;};
+    flake-packages = self.packages;
+
+    legacyPackages = forAllSystems (
+      system:
+        import nixpkgs {
+          inherit system;
+          overlays = builtins.attrValues overlays;
+          config.allowUnfree = true;
+        }
+    );
   in
   {
-    hosts = import ./hosts.nix;
-    lib = import ./lib inputs;
+    inherit overlays;
 
-    pkgs = forAllSystems (localSystem: import nixpkgs {
-      inherit localSystem;
-      overlays = [ self.overlays.default ];
-      config = {
-        allowUnfree = true;
-        allowAliases = true;
-      };
-    });
+    packages = forAllSystems (
+      system: let
+        pkgs = legacyPackages.${system};
+      in
+        import ./pkgs {
+          inherit pkgs;
+          inherit inputs;
+        }
+    );
 
-    pkgs-unstable = forAllSystems (localSystem: import nixpkgs-unstable {
-      inherit localSystem;
-      overlays = [ self.overlays.default ];
-      config = {
-        allowUnfree = true;
-        allowAliases = true;
-      };
-    });
+    nixosConfigurations = {
+      gladius = mkSystemLib.mkNixosSystem "x86_64-linux" "gladius" overlays flake-packages;
+    };
 
-    overlays = import ./lib/generateOverlays.nix inputs;
-    packages = forAllSystems (import ./packages inputs);
-
-    deploy = import ./deploy.nix inputs;
-    nixosConfigurations = import ./lib/generateNixosConfigurations.nix inputs;
-    darwinConfigurations = import ./lib/generateDarwinConfigurations.nix inputs;
-  };
+    darwinConfigurations = {
+      bernd-macbook = mkSystemLib.mkDarwinSystem "aarch64-darwin" "bernd-macbook" overlays flake-packages;
+    };
+  } // import ./deploy.nix inputs;
 }
