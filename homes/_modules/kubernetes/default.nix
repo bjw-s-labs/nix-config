@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./flux
     ./helmfile
     ./k9s
     ./krew
