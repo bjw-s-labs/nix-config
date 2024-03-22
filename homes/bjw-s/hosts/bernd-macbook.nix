@@ -27,6 +27,10 @@ let
       # Formatters
       esbenp.prettier-vscode
 
+      # Linters
+      davidanson.vscode-markdownlint
+      fnando.linter
+
       # Remote development
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh

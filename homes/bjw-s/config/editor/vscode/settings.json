@@ -123,5 +123,6 @@
     "*": true,
     "nix": true,
     "helm": true
-  }
+  },
+  "extensions.autoUpdate": false
 }
