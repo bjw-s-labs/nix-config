@@ -31,7 +31,7 @@
               inputs.sops-nix.homeManagerModules.sops
             ];
             extraSpecialArgs = {
-              inherit inputs hostname;
+              inherit inputs hostname flake-packages;
             };
             users.bjw-s = ../. + "/homes/bjw-s";
           };
