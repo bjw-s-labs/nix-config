@@ -13,6 +13,7 @@
       envsubst
       findutils
       fish
+      gnused
       gum
       jo
       jq
