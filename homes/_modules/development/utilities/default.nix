@@ -11,7 +11,8 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       cue
-      nixpkgs-fmt
+      nixd
+      nixfmt
       nodePackages.prettier
       pre-commit
       shellcheck

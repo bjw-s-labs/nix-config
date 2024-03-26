@@ -7,6 +7,9 @@
       "autoUpdate": true
     }
   },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
   "[terraform]": {
     "editor": {
       "defaultFormatter": "hashicorp.terraform"
@@ -65,7 +68,14 @@
   },
   "nix": {
     "enableLanguageServer": true,
-    "serverPath": "nil"
+    "serverPath": "nixd",
+    "serverSettings": {
+      "nixd": {
+        "formatting": {
+            "command": "nixfmt"
+        }
+      }
+    }
   },
   "path-autocomplete": {
     "triggerOutsideStrings": true
