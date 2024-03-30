@@ -3,7 +3,7 @@
   ...
 }:
 {
-  deploy-rs = inputs.deploy-rs.overlay;
+  deploy-rs = inputs.deploy-rs.overlays.default;
 
   rust-overlay = inputs.rust-overlay.overlays.default;
 
