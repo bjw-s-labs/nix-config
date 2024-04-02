@@ -1,0 +1,51 @@
+name: Nix Flake actions
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  nix-build:
+    strategy:
+      fail-fast: false # let it build all the targets
+      matrix:
+        include:
+          - derivation: darwinConfigurations.bernd-macbook.system
+            os: macos-14
+          - derivation: nixosConfigurations.gladius.config.system.build.toplevel
+            os: ubuntu-22.04
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v26
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            system-features = nixos-test benchmark big-parallel kvm
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: cachix/cachix-action@v14
+        with:
+          name: bjw-s
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - run: |
+          nix build \
+            --print-build-logs \
+            --builders "" \
+            --max-jobs 2 \
+            --eval-store auto \
+            ".#${{ matrix.derivation }}"
+
+  nix-build-success:
+    if: ${{ always() }}
+    needs:
+      - nix-build
+    name: Nix Build Successful
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        name: Check matrix status
+        run: exit 1
