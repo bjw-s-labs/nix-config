@@ -38,3 +38,14 @@ jobs:
             --max-jobs 2 \
             --eval-store auto \
             ".#${{ matrix.derivation }}"
+
+  nix-build-success:
+    if: ${{ always() }}
+    needs:
+      - nix-build
+    name: Nix Build Successful
+    runs-on: ubuntu-latest
+    steps:
+      - if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        name: Check matrix status
+        run: exit 1
