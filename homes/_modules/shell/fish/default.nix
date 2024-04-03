@@ -19,8 +19,8 @@ in {
         enable = true;
 
         plugins = [
-          { name = "done"; src = pkgs.fishPlugins.done.src; }
-          { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
+          { name = "done"; inherit (pkgs.fishPlugins.done) src; }
+          { name = "puffer"; inherit (pkgs.fishPlugins.puffer) src; }
         ];
 
         interactiveShellInit = ''

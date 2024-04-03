@@ -26,7 +26,7 @@ in
     services.k3s = {
       enable = true;
       role = "server";
-      package = cfg.package;
+      inherit (cfg) package;
     };
 
     services.k3s.extraFlags = toString ([

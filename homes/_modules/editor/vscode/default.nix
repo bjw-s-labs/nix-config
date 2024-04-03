@@ -37,8 +37,8 @@ in
         enable = true;
         mutableExtensionsDir = true;
 
-        extensions = cfg.extensions;
-        userSettings = cfg.userSettings;
+        inherit (cfg) extensions;
+        inherit (cfg) userSettings;
       };
 
       home.file = lib.genAttrs pathsToMakeWritable (_: {

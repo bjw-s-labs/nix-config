@@ -10,7 +10,7 @@ let
 
     profiles = {
       system = {
-        sshUser = cfg.sshUser;
+        inherit (cfg) sshUser;
         path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.${name};
         user = "root";
       };

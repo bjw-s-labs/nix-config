@@ -25,7 +25,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-VgrYhJU0pClEr2MJXk4IxJWL7PVG8YHAb8ITo9wBMPw=";
 
-  buildInputs = [ ] ++ lib.optionals isDarwin [ Security SystemConfiguration ];
+  buildInputs = lib.optionals isDarwin [ Security SystemConfiguration ];
 
   meta = {
     homepage = "https://usage.jdx.dev";

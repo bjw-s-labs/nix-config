@@ -15,7 +15,7 @@ in
     enable = lib.mkEnableOption "mise";
     package = lib.mkPackageOption pkgs "mise" { };
     settings = lib.mkOption {
-      type = tomlFormat.type;
+      inherit (tomlFormat) type;
       default = { };
     };
   };

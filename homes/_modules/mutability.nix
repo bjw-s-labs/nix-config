@@ -10,7 +10,7 @@ let
 in {
   options = let
 
-    mergeAttrsList = builtins.foldl' (lib.mergeAttrs) { };
+    mergeAttrsList = builtins.foldl' lib.mergeAttrs { };
 
     fileAttrsType = lib.types.attrsOf (lib.types.submodule ({ config, ... }: {
       options.mutable = lib.mkOption {
@@ -34,9 +34,9 @@ in {
   config = {
     home.activation.mutableFileGeneration = let
 
-      allFiles = (builtins.concatLists (map
+      allFiles = builtins.concatLists (map
         (attrPath: builtins.attrValues (lib.getAttrFromPath attrPath config))
-        fileOptionAttrPaths));
+        fileOptionAttrPaths);
 
       filterMutableFiles = builtins.filter (file:
         (file.mutable or false) && lib.assertMsg file.force
@@ -44,19 +44,19 @@ in {
 
       mutableFiles = filterMutableFiles allFiles;
 
-      toCommand = (file:
+      toCommand = file:
         let
           source = lib.escapeShellArg file.source;
           target = lib.escapeShellArg file.target;
         in ''
           $VERBOSE_ECHO "${source} -> ${target}"
           $DRY_RUN_CMD cp --remove-destination --no-preserve=mode ${source} ${target}
-        '');
+        '';
 
       command = ''
         echo "Copying mutable home files for $HOME"
       '' + lib.concatLines (map toCommand mutableFiles);
 
-    in (lib.hm.dag.entryAfter [ "linkGeneration" ] command);
+    in lib.hm.dag.entryAfter [ "linkGeneration" ] command;
   };
 }

@@ -1,6 +1,4 @@
-{
-  ...
-}:
+_:
 {
   config = {
     plugins.todo-comments = {
