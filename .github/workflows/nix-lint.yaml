@@ -4,7 +4,8 @@ on:
   pull_request:
 
 jobs:
-  check:
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +22,15 @@ jobs:
           experimental-features = nix-command flakes
     - uses: DeterminateSystems/magic-nix-cache-action@main
 
-    - name: Install Nix Linting Tools
-      run: nix-env -i statix -f '<nixpkgs>'
+    - uses: yaxitech/nix-install-pkgs-action@v3
+      with:
+        packages: "nixpkgs#statix"
 
     - name: Run Statix Lint
       run: statix fix
 
     - name: Nix Flake Checker
       uses: DeterminateSystems/flake-checker-action@v5
+
+    - name: Show changes
+      run: git diff
