@@ -12,9 +12,9 @@ jobs:
       fail-fast: false # let it build all the targets
       matrix:
         include:
-          - derivation: darwinConfigurations.bernd-macbook.system
+          - system: bernd-macbook
             os: macos-14
-          - derivation: nixosConfigurations.gladius.config.system.build.toplevel
+          - system: gladius
             os: ubuntu-22.04
     runs-on: ${{ matrix.os }}
     steps:
@@ -38,7 +38,7 @@ jobs:
             --builders "" \
             --max-jobs 2 \
             --eval-store auto \
-            ".#${{ matrix.derivation }}"
+            ".#ciSystems.${{ matrix.system }}"
 
   nix-build-success:
     if: ${{ always() }}
