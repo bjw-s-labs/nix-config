@@ -134,5 +134,6 @@
     "nix": true,
     "helm": true
   },
+  "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false
 }

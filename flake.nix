@@ -48,6 +48,12 @@
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
     };
+
+    # Catppuccin
+    catppuccin = {
+      # url = "github:catppuccin/nix";
+      url = "github:bjw-s/catppuccin-nix";
+    };
   };
 
   outputs = {

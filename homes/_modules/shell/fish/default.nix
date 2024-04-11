@@ -17,6 +17,7 @@ in {
     (lib.mkIf cfg.enable {
       programs.fish = {
         enable = true;
+        catppuccin.enable = true;
 
         plugins = [
           { name = "done"; inherit (pkgs.fishPlugins.done) src; }

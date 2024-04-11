@@ -98,5 +98,12 @@
         package = pkgs.unstable.mise;
       };
     };
+
+    themes = {
+      catppuccin = {
+        enable = true;
+        flavour = "macchiato";
+      };
+    };
   };
 }

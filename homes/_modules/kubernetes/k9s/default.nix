@@ -6,6 +6,8 @@
 }:
 let
   cfg = config.modules.kubernetes;
+  themeConfig = config.modules.themes;
+
 in
 {
   config = lib.mkMerge [
@@ -13,16 +15,19 @@ in
       programs.k9s = {
         enable = true;
         package = pkgs.unstable.k9s;
+        catppuccin.enable = true;
 
         aliases = {
-          dp = "deployments";
-          sec = "v1/secrets";
-          jo = "jobs";
-          cr = "clusterroles";
-          crb = "clusterrolebindings";
-          ro = "roles";
-          rb = "rolebindings";
-          np = "networkpolicies";
+          aliases = {
+            dp = "deployments";
+            sec = "v1/secrets";
+            jo = "jobs";
+            cr = "clusterroles";
+            crb = "clusterrolebindings";
+            ro = "roles";
+            rb = "rolebindings";
+            np = "networkpolicies";
+          };
         };
 
         settings = {
@@ -33,7 +38,6 @@ in
             readOnly = false;
             noExitOnCtrlC = false;
             ui = {
-              skin = "catppuccin-macchiato";
               enableMouse = false;
               headless = false;
               logoless = false;
@@ -44,7 +48,7 @@ in
             skipLatestRevCheck = false;
             disablePodCounting = false;
             shellPod = {
-              image = "busybox:1.35.0";
+              image = "busybox";
               namespace = "default";
               limits = {
                 cpu = "100m";
@@ -79,6 +83,10 @@ in
           };
         };
       };
+
+      # TODO: Remove tihs jank when home-manager 24.05 becomes stable
+      xdg.configFile."k9s/aliases.yaml".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/k9s/aliases.yml";
+      xdg.configFile."k9s/config.yaml".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/k9s/config.yml";
     })
   ];
 }
