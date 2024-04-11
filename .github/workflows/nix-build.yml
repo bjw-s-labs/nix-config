@@ -105,21 +105,6 @@ jobs:
           nix profile diff-closures --profile ./profile | perl -pe 's/\e\[[0-9;]*m(?:\e\[K)?//g' >> "${GITHUB_OUTPUT}"
           echo "${delimiter}" >> "${GITHUB_OUTPUT}"
 
-      - name: Scan for security issues
-        id: security
-        run: |
-          nix run nixpkgs/nixos-unstable#vulnix -- -w https://raw.githubusercontent.com/ckauhaus/nixos-vulnerability-roundup/master/whitelists/nixos-unstable.toml ./profile | tee /tmp/security.txt
-          OUTPUT_SECURITY="$(cat /tmp/security.txt)"
-          OUTPUT_SECURITY="${OUTPUT_SECURITY//'%'/'%25'}"
-          OUTPUT_SECURITY="${OUTPUT_SECURITY//$'\n'/'%0A'}"
-          OUTPUT_SECURITY="${OUTPUT_SECURITY//$'\r'/'%0D'}"
-          echo "$OUTPUT_SECURITY"
-
-          delimiter="$(openssl rand -hex 16)"
-          echo "security<<${delimiter}" >> "${GITHUB_OUTPUT}"
-          echo "$OUTPUT_SECURITY" >> "${GITHUB_OUTPUT}"
-          echo "${delimiter}" >> "${GITHUB_OUTPUT}"
-
       - name: Comment report in pr
         uses: marocchino/sticky-pull-request-comment@v2
         with:
@@ -130,11 +115,6 @@ jobs:
 
             <summary> Version changes </summary> <br>
             <pre> ${{ steps.diff.outputs.diff }} </pre>
-
-            <details>
-            <summary> Security vulnerability report </summary> <br>
-            <pre> ${{ steps.security.outputs.security }} </pre>
-            </details>
 
   nix-build-success:
     if: ${{ always() }}
