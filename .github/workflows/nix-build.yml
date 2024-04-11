@@ -17,6 +17,8 @@ concurrency:
 jobs:
   nix-build:
     if: github.event.pull_request.draft == false
+    permissions:
+      pull-requests: write
     strategy:
       fail-fast: false
       matrix:

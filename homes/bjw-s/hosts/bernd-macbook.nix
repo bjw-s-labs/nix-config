@@ -14,12 +14,5 @@
     };
     kubernetes.enable = true;
     security.gnugpg.enable = true;
-    virtualisation = {
-      colima = {
-        enable = true;
-        startService = true;
-      };
-      docker-cli.enable = true;
-    };
   };
 }
