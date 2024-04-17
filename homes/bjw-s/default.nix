@@ -55,6 +55,7 @@
             ms-vscode-remote.remote-ssh
 
             # Other
+            eamodio.gitlens
             gruntfuggly.todo-tree
             ionutvmi.path-autocomplete
             luisfontes19.vscode-swissknife
