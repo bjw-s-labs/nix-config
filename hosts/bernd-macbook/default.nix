@@ -7,7 +7,7 @@
 {
   config = {
     networking = {
-      computerName = "Bernd's MacBook Air";
+      computerName = "Bernd's MacBook";
       hostName = hostname;
       localHostName = hostname;
     };
