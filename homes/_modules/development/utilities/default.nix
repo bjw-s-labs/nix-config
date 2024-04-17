@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   lib,
   config,
   ...
@@ -18,6 +19,7 @@ in
       shellcheck
       shfmt
       yamllint
+      inputs.nix-inspect.packages.${pkgs.system}.default
     ];
   };
 }

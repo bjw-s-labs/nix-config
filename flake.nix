@@ -54,6 +54,8 @@
       # url = "github:catppuccin/nix";
       url = "github:bjw-s/catppuccin-nix";
     };
+
+    nix-inspect.url = "github:bluskript/nix-inspect";
   };
 
   outputs = {
@@ -62,6 +64,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-darwin,
+    nix-inspect,
     nixvim,
     nix-vscode-extensions,
     deploy-rs,
