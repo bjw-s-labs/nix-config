@@ -13,9 +13,7 @@ in {
 
     sops = {
       defaultSopsFile = ./secrets.sops.yaml;
-      age.sshKeyPaths = [
-        ageKeyFile
-      ];
+      age.keyFile = ageKeyFile;
       secrets = {
         atuin_key = {
           path = "${config.xdg.configHome}/atuin/key";
