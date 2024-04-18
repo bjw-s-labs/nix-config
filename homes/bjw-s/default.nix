@@ -35,6 +35,7 @@
             # Language support
             golang.go
             hashicorp.terraform
+            helm-ls.helm-ls
             jnoortheen.nix-ide
             mrmlnc.vscode-json5
             ms-azuretools.vscode-docker

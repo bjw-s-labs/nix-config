@@ -19,6 +19,7 @@ in
       shellcheck
       shfmt
       yamllint
+      unstable.helm-ls
       inputs.nix-inspect.packages.${pkgs.system}.default
     ];
   };
