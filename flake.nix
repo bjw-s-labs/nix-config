@@ -107,6 +107,7 @@
 
     darwinConfigurations = {
       bernd-macbook = mkSystemLib.mkDarwinSystem "aarch64-darwin" "bernd-macbook" overlays flake-packages;
+      infraworkz = mkSystemLib.mkDarwinSystem "aarch64-darwin" "infraworkz" overlays flake-packages;
     };
 
     # Convenience output that aggregates the outputs for home, nixos.
