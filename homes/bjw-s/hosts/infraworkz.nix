@@ -1,8 +1,18 @@
 {
+  config,
   lib,
   ...
 }:
 {
+  sops.secrets = {
+    "work/git_config" = {
+      path = "${config.xdg.configHome}/git/work_config";
+    };
+    "work/git_config_client_1" = {
+      path = "${config.xdg.configHome}/git/git_config_client_1";
+    };
+  };
+
   modules = {
     deployment.nix.enable = true;
     development.enable = true;
@@ -14,5 +24,12 @@
     };
     kubernetes.enable = true;
     security.gnugpg.enable = true;
+    shell.git = {
+      config = {
+        include = {
+          path = "${config.xdg.configHome}/git/work_config";
+        };
+      };
+    };
   };
 }
