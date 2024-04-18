@@ -35,6 +35,7 @@ in
     (lib.mkIf cfg.enable {
       programs.vscode = {
         enable = true;
+        package = pkgs.unstable.vscode;
         mutableExtensionsDir = true;
 
         inherit (cfg) extensions;
