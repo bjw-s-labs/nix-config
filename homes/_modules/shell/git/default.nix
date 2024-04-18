@@ -19,6 +19,10 @@ in {
     signingKey = lib.mkOption {
       type = lib.types.str;
     };
+    config = lib.mkOption {
+      type = lib.types.attrs;
+      default = {};
+    };
   };
 
   config = lib.mkMerge [
@@ -32,20 +36,24 @@ in {
         userName = cfg.username;
         userEmail = cfg.email;
 
-        extraConfig = {
-          core = {
-            autocrlf = "input";
-          };
-          init = {
-            defaultBranch = "main";
-          };
-          pull = {
-            rebase = true;
-          };
-          rebase = {
-            autoStash = true;
-          };
-        };
+        extraConfig = lib.mkMerge [
+          {
+            core = {
+              autocrlf = "input";
+            };
+            init = {
+              defaultBranch = "main";
+            };
+            pull = {
+              rebase = true;
+            };
+            rebase = {
+              autoStash = true;
+            };
+          }
+          cfg.config
+        ];
+
         aliases = {
           co = "checkout";
         };
