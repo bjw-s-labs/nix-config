@@ -32,14 +32,25 @@
       casks = [
         "1password"
         "bartender"
+        "citrix-workspace"
+        "displaylink"
+        "google-chrome"
         "iterm2"
         "karabiner-elements"
         "keyboard-maestro"
         "linearmouse"
+        "obsidian"
+        "orbstack"
         "raycast"
         "shottr"
+        "tableplus"
+        "transmit"
       ];
-      masApps = {};
+      masApps = {
+        "Adguard for Safari" = 1440147259;
+        "Caffeinated" = 1362171212;
+        "Keka" = 470158793;
+      };
     };
   };
 }
