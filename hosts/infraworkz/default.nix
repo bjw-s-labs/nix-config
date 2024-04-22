@@ -38,7 +38,6 @@
         "iterm2"
         "karabiner-elements"
         "keyboard-maestro"
-        "linearmouse"
         "microsoft-teams"
         "obsidian"
         "orbstack"
