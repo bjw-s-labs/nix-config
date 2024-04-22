@@ -30,27 +30,18 @@
       brews = [
       ];
       casks = [
-        "1password"
-        "bartender"
         "citrix-workspace"
         "displaylink"
         "google-chrome"
-        "iterm2"
-        "karabiner-elements"
-        "keyboard-maestro"
-        "linearmouse"
         "microsoft-teams"
         "obsidian"
         "orbstack"
-        "raycast"
         "slack"
-        "shottr"
         "tableplus"
         "transmit"
       ];
       masApps = {
         "Adguard for Safari" = 1440147259;
-        "Caffeinated" = 1362171212;
         "Keka" = 470158793;
       };
     };
