@@ -13,5 +13,19 @@ _:
     };
     taps = [
     ];
+    brews = [
+    ];
+    casks = [
+      "1password"
+      "bartender"
+      "iterm2"
+      "karabiner-elements"
+      "keyboard-maestro"
+      "raycast"
+      "shottr"
+    ];
+    masApps = {
+      "Caffeinated" = 1362171212;
+    };
   };
 }
