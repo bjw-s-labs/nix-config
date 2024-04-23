@@ -11,6 +11,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ./secrets.nix
   ];
 
   config = {
@@ -50,6 +51,11 @@ in
     modules = {
       services = {
         openssh.enable = true;
+
+        onepassword-connect = {
+          enable = true;
+          credentialsFile = config.sops.secrets.onepassword-credentials.path;
+        };
       };
 
       users = {
