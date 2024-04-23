@@ -24,6 +24,7 @@ in
 {
   deploy.nodes = {
     gladius = deployConfig "gladius" "x86_64-linux" {sshUser = "bjw-s"; remoteBuild = true;};
+    milton = deployConfig "milton" "x86_64-linux" {sshUser = "bjw-s"; remoteBuild = true;};
   };
   checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
 }

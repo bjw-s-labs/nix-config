@@ -79,6 +79,11 @@
             user = "bjw-s";
             forwardAgent = true;
           };
+          "milton.bjw-s.casa" = {
+            port = 22;
+            user = "bjw-s";
+            forwardAgent = true;
+          };
         };
       };
     };

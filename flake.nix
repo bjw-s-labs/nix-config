@@ -103,6 +103,7 @@
 
     nixosConfigurations = {
       gladius = mkSystemLib.mkNixosSystem "x86_64-linux" "gladius" overlays flake-packages;
+      milton = mkSystemLib.mkNixosSystem "x86_64-linux" "milton" overlays flake-packages;
     };
 
     darwinConfigurations = {
