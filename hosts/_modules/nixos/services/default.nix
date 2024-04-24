@@ -7,6 +7,7 @@
     ./blocky
     ./dnsdist
     ./k3s
+    ./nginx
     ./nfs
     ./onepassword-connect
     ./openssh
