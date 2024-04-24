@@ -50,6 +50,11 @@ in
 
     modules = {
       services = {
+        dnsdist = {
+          enable = true;
+          config = builtins.readFile ./config/dnsdist.conf;
+        };
+
         openssh.enable = true;
 
         onepassword-connect = {
