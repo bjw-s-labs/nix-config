@@ -3,6 +3,7 @@
 }:
 {
   imports = [
+    ./blocky
     ./dnsdist
     ./k3s
     ./nfs

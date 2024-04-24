@@ -50,17 +50,23 @@ in
 
     modules = {
       services = {
+        blocky = {
+          enable = true;
+          package = pkgs.unstable.blocky;
+          config = import ./config/blocky.nix;
+        };
+
         dnsdist = {
           enable = true;
           config = builtins.readFile ./config/dnsdist.conf;
         };
 
-        openssh.enable = true;
-
         onepassword-connect = {
           enable = true;
           credentialsFile = config.sops.secrets.onepassword-credentials.path;
         };
+
+        openssh.enable = true;
       };
 
       users = {
