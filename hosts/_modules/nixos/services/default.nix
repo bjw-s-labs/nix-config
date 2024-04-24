@@ -3,6 +3,7 @@
 }:
 {
   imports = [
+    ./bind
     ./blocky
     ./dnsdist
     ./k3s
