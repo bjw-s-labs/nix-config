@@ -10,7 +10,7 @@
   ];
 
   # configuration of client name resolution
-  clientLookup.upstream = "10.5.0.3";
+  clientLookup.upstream = "127.0.0.1:5354";
 
   ecs.useAsClient = true;
 

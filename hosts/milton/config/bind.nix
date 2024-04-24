@@ -18,7 +18,6 @@ acl trusted {
   10.1.4.0/24;    # VIDEO
   192.168.2.0/24; # GUEST
   10.0.11.0/24;   # WIREGUARD
-  10.5.0.0/24;    # CONTAINERS
 };
 acl badnetworks {  };
 
@@ -50,11 +49,30 @@ logging {
 zone "bjw-s.dev." {
   type master;
   file "${config.sops.secrets."networking/bind/zones/bjw-s.dev".path}";
+  journal "${config.services.bind.directory}/db.bjw-s.dev.jnl";
   allow-transfer {
     key "externaldns";
   };
   update-policy {
     grant externaldns zonesub ANY;
   };
+};
+
+zone "bjw-s.casa." {
+  type master;
+  file "${config.sops.secrets."networking/bind/zones/bjw-s.casa".path}";
+  journal "${config.services.bind.directory}/db.bjw-s.casa.jnl";
+};
+
+zone "1.10.in-addr.arpa." {
+  type master;
+  file "${config.sops.secrets."networking/bind/zones/1.10.in-addr.arpa".path}";
+  journal "${config.services.bind.directory}/db.1.10.in-addr.arpa.jnl";
+};
+
+zone "unifi." {
+  type master;
+  file "${config.sops.secrets."networking/bind/zones/unifi".path}";
+  journal "${config.services.bind.directory}/db.unifi.jnl";
 };
 ''

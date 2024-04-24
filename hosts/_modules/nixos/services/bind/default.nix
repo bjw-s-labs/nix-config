@@ -20,6 +20,13 @@ in
   config = lib.mkIf cfg.enable {
     networking.resolvconf.useLocalResolver = lib.mkForce false;
 
+    # Clean up journal files
+    systemd.services.bind = {
+      preStart = lib.mkAfter ''
+        rm -rf ${config.services.bind.directory}/*.jnl
+      '';
+    };
+
     services.bind = {
       enable = true;
       package = cfg.package;
