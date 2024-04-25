@@ -35,10 +35,6 @@
           restartUnits = [ "bind.service" ];
           owner = config.users.users.named.name;
         };
-        "networking/bind/zones/unifi" = {
-          restartUnits = [ "bind.service" ];
-          owner = config.users.users.named.name;
-        };
         "networking/bind/zones/1.10.in-addr.arpa" = {
           restartUnits = [ "bind.service" ];
           owner = config.users.users.named.name;

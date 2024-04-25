@@ -69,10 +69,4 @@ zone "1.10.in-addr.arpa." {
   file "${config.sops.secrets."networking/bind/zones/1.10.in-addr.arpa".path}";
   journal "${config.services.bind.directory}/db.1.10.in-addr.arpa.jnl";
 };
-
-zone "unifi." {
-  type master;
-  file "${config.sops.secrets."networking/bind/zones/unifi".path}";
-  journal "${config.services.bind.directory}/db.unifi.jnl";
-};
 ''
