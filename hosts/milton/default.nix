@@ -66,6 +66,8 @@ in
           config = builtins.readFile ./config/dnsdist.conf;
         };
 
+        node-exporter.enable = true;
+
         onepassword-connect = {
           enable = true;
           credentialsFile = config.sops.secrets.onepassword-credentials.path;

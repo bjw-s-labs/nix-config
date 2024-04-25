@@ -9,8 +9,10 @@
     ./k3s
     ./nginx
     ./nfs
+    ./node-exporter
     ./onepassword-connect
     ./openssh
+    ./podman
     ./samba
     ./smartd
   ];
