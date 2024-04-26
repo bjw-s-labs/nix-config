@@ -5,6 +5,7 @@
   imports = [
     ./bind
     ./blocky
+    ./cfdyndns
     ./dnsdist
     ./k3s
     ./minio

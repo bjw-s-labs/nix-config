@@ -19,6 +19,8 @@
         onepassword-credentials = {
           mode = "0444";
         };
+        "networking/cloudflare/ddns/apiToken" = {};
+        "networking/cloudflare/ddns/records" = {};
         "networking/bind/rndc-key" = {
           restartUnits = [ "bind.service" ];
           owner = config.users.users.named.name;
