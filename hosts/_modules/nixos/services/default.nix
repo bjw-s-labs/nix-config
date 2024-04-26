@@ -7,6 +7,7 @@
     ./blocky
     ./dnsdist
     ./k3s
+    ./minio
     ./nginx
     ./nfs
     ./node-exporter
@@ -15,5 +16,6 @@
     ./podman
     ./samba
     ./smartd
+    ./smartctl-exporter
   ];
 }

@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
@@ -24,11 +25,17 @@
     };
     kubernetes.enable = true;
     security.gnugpg.enable = true;
-    shell.git = {
-      config = {
-        include = {
-          path = "${config.xdg.configHome}/git/work_config";
+    shell = {
+      git = {
+        config = {
+          include = {
+            path = "${config.xdg.configHome}/git/work_config";
+          };
         };
+      };
+      mise = {
+        enable = true;
+        package = pkgs.unstable.mise;
       };
     };
   };

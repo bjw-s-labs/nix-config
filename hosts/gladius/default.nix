@@ -11,6 +11,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ./secrets.nix
   ];
 
   config = {
@@ -58,7 +59,7 @@ in
 
       services = {
         k3s = {
-          enable = true;
+          enable = false;
           package = pkgs.unstable.k3s_1_29;
           extraFlags = [
             "--tls-san=${config.networking.hostName}.bjw-s.casa"
@@ -66,7 +67,24 @@ in
           ];
         };
 
+        nginx = {
+          enableAcme = true;
+          acmeCloudflareAuthFile = config.sops.secrets."networking/cloudflare/auth".path;
+        };
+
+        minio = {
+          enable = true;
+          package = pkgs.unstable.minio;
+          rootCredentialsFile = config.sops.secrets."storage/minio/root-credentials".path;
+          dataDir = "/tank/Apps/minio";
+          enableReverseProxy = true;
+          minioConsoleURL = "minio.bjw-s.dev";
+          minioS3URL = "s3.bjw-s.dev";
+        };
+
         nfs.enable = true;
+
+        node-exporter.enable = true;
 
         openssh.enable = true;
 
@@ -103,6 +121,7 @@ in
         };
 
         smartd.enable = true;
+        smartctl-exporter.enable = true;
       };
 
       users = {

@@ -1,6 +1,11 @@
+let
+  ads-whitelist = builtins.toFile "ads-whitelist" ''
+    rabobank.nl
+  '';
+in
 {
   ports = {
-    dns = "0.0.0.0:5353";
+    dns = "0.0.0.0:5390";
     http = 4000;
   };
   upstreams.groups.default = [
@@ -10,7 +15,7 @@
   ];
 
   # configuration of client name resolution
-  clientLookup.upstream = "127.0.0.1:5354";
+  clientLookup.upstream = "127.0.0.1:5391";
 
   ecs.useAsClient = true;
 
@@ -35,7 +40,7 @@
 
     whiteLists = {
       ads = [
-        "rabobank.nl"
+        "file://${ads-whitelist}"
       ];
     };
 

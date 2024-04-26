@@ -70,10 +70,6 @@
       ssh = {
         enable = true;
         matchBlocks = {
-          "gateway.bjw-s.casa" = {
-            port = 22;
-            user = "vyos";
-          };
           "gladius.bjw-s.casa" = {
             port = 22;
             user = "bjw-s";
@@ -99,11 +95,6 @@
       };
 
       go-task.enable = true;
-
-      mise = {
-        enable = true;
-        package = pkgs.unstable.mise;
-      };
     };
 
     themes = {
