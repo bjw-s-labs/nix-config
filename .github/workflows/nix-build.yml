@@ -25,7 +25,11 @@ jobs:
         include:
           - system: bernd-macbook
             os: macos-14
+          - system: infraworkz
+            os: macos-14
           - system: gladius
+            os: ubuntu-22.04
+          - system: milton
             os: ubuntu-22.04
     runs-on: ${{ matrix.os }}
     steps:
