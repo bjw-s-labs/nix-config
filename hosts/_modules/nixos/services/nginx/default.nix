@@ -30,7 +30,7 @@ in
       enable = true;
       recommendedProxySettings = true;
       recommendedTlsSettings = true;
-      upstreams = cfg.upstreams;
+      inherit (cfg) upstreams;
       virtualHosts = cfg.virtualHosts // {
         "_" = {
           root = "/var/www/placeholder";
