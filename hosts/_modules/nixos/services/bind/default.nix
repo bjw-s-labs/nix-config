@@ -29,7 +29,7 @@ in
 
     services.bind = {
       enable = true;
-      package = cfg.package;
+      inherit (cfg) package;
       ipv4Only = true;
       configFile = pkgs.writeText "bind.cfg" cfg.config;
     };

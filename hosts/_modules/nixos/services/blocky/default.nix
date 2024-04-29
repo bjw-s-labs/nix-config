@@ -14,7 +14,7 @@ in
     enable = lib.mkEnableOption "blocky";
     package = lib.mkPackageOption pkgs "blocky" { };
     config = lib.mkOption {
-      type = yamlFormat.type;
+      inherit (yamlFormat) type;
       default = {};
     };
   };

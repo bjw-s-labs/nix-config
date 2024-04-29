@@ -64,11 +64,11 @@ in
 
     services.minio = {
       enable = true;
-      package = cfg.package;
+      inherit (cfg) package;
       dataDir = [
         cfg.dataDir
       ];
-      rootCredentialsFile = cfg.rootCredentialsFile;
+      inherit (cfg) rootCredentialsFile;
     };
   };
 }
