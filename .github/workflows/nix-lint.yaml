@@ -22,7 +22,7 @@ jobs:
           experimental-features = nix-command flakes
     - uses: DeterminateSystems/magic-nix-cache-action@main
 
-    - uses: yaxitech/nix-install-pkgs-action@v3
+    - uses: yaxitech/nix-install-pkgs-action@v4
       with:
         packages: "nixpkgs#statix"
 
