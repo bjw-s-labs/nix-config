@@ -5,6 +5,9 @@ tasks:
   apply-darwin:
     desc: Build and apply nix-darwin configuration
     silent: true
+    summary: |
+      Args:
+        host: Host to build and deploy to (required)
     requires:
       vars:
         - host
@@ -23,6 +26,9 @@ tasks:
   build-darwin:
     desc: Build nix-darwin configuration
     silent: true
+    summary: |
+      Args:
+        host: Host to build and deploy to (required)
     requires:
       vars:
         - host
