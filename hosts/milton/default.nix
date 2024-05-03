@@ -61,12 +61,6 @@ in
           config = import ./config/blocky.nix;
         };
 
-        cfdyndns = {
-          enable = true;
-          apiTokenFile = config.sops.secrets."networking/cloudflare/ddns/apiToken".path;
-          recordsFile = config.sops.secrets."networking/cloudflare/ddns/records".path;
-        };
-
         dnsdist = {
           enable = true;
           config = builtins.readFile ./config/dnsdist.conf;
