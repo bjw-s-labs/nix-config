@@ -44,7 +44,7 @@ in
             proxy_request_buffering off;
           '';
           locations."/" = {
-            proxyPass = "http://127.0.01:9000/";
+            proxyPass = "http://127.0.0.1:9000/";
           };
         };
         "${cfg.minioConsoleURL}" = {
@@ -52,7 +52,7 @@ in
           acmeRoot = null;
           forceSSL = config.modules.services.nginx.enableAcme;
           locations."/" = {
-            proxyPass = "http://127.0.01:9001/";
+            proxyPass = "http://127.0.0.1:9001/";
             extraConfig = ''
               proxy_set_header Upgrade $http_upgrade;
               proxy_set_header Connection "upgrade";
