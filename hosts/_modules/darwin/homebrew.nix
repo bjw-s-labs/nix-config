@@ -21,6 +21,7 @@ _:
       "iterm2"
       "karabiner-elements"
       "keyboard-maestro"
+      "notunes"
       "raycast"
       "shottr"
     ];
