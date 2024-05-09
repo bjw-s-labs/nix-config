@@ -30,7 +30,7 @@ jobs:
       run: statix fix
 
     - name: Nix Flake Checker
-      uses: DeterminateSystems/flake-checker-action@v5
+      uses: DeterminateSystems/flake-checker-action@v6
 
     - name: Show changes
       run: git diff
