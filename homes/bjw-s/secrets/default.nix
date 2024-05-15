@@ -16,7 +16,7 @@ in {
       age.keyFile = ageKeyFile;
       secrets = {
         atuin_key = {
-          path = "${config.xdg.configHome}/atuin/key";
+          path = "${config.xdg.dataHome}/atuin/key";
         };
       };
     };
