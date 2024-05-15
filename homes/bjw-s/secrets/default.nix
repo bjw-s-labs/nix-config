@@ -14,10 +14,10 @@ in {
     sops = {
       defaultSopsFile = ./secrets.sops.yaml;
       age.keyFile = ageKeyFile;
+      age.generateKey = true;
+
       secrets = {
-        atuin_key = {
-          path = "${config.xdg.dataHome}/atuin/key";
-        };
+        atuin_key = {};
       };
     };
 

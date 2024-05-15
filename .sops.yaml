@@ -1,7 +1,7 @@
 ---
 keys:
-  - &host_gladius age13hry6wpjk5zvzwn7jy9mmcv2tjy5axk2ur8ky6c9n4kvj8tc4s8suqfvy3
-  - &host_milton age1p5najec7uuhad6446xv0jasv89mam4aer9ansrmt7c5u5ymahvvqvv2qac
+  - &host_gladius age1yf9ntkq86gy9u0qmffsklh2eurym5j00qswn0t2gfwrh9dj6s5ssgkyenf
+  - &host_milton age16ppzg3tt5s0n9unwnqgqnu6clkj6wtfe4dsq63f7vccyamg6wg6qgfxu80
   - &user_bjw-s age1uk0y2ahfavgsgqvrtg5a22w5gytpdmjuatxtcw6kntmxhlcgreesuwzw5s
 
 creation_rules:

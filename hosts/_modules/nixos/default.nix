@@ -3,6 +3,7 @@
 }: {
   imports = [
     ./nix.nix
+    ./sops.nix
     ./users.nix
     ./filesystems
     ./services

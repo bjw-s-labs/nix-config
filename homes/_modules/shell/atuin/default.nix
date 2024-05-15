@@ -1,26 +1,31 @@
 {
+  config,
   pkgs,
+  lib,
   ...
-}:
+}: let
+  cfg = config.modules.shell.atuin;
+  tomlFormat = pkgs.formats.toml { };
+in
 {
-  config = {
+  options.modules.shell.atuin = {
+    enable = lib.mkEnableOption "atuin";
+    package = lib.mkPackageOption pkgs "atuin" { };
+    flags = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+    };
+    settings = lib.mkOption {
+      inherit (tomlFormat) type;
+      default = { };
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
     programs.atuin = {
       enable = true;
-      package = pkgs.unstable.atuin;
-
-      flags = [
-        "--disable-up-arrow"
-      ];
-
-      settings = {
-        sync_address = "https://atuin.bjw-s.dev";
-        auto_sync = true;
-        sync_frequency = "1m";
-        search_mode = "fuzzy";
-        sync = {
-          records = true;
-        };
-      };
+      package = cfg.package;
+      flags = cfg.flags;
+      settings = cfg.settings;
     };
   };
 }
