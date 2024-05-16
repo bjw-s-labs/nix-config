@@ -58,16 +58,4 @@ zone "bjw-s.dev." {
     grant externaldns zonesub ANY;
   };
 };
-
-zone "bjw-s.casa." {
-  type master;
-  file "${config.sops.secrets."networking/bind/zones/bjw-s.casa".path}";
-  journal "${config.services.bind.directory}/db.bjw-s.casa.jnl";
-};
-
-zone "1.10.in-addr.arpa." {
-  type master;
-  file "${config.sops.secrets."networking/bind/zones/1.10.in-addr.arpa".path}";
-  journal "${config.services.bind.directory}/db.1.10.in-addr.arpa.jnl";
-};
 ''

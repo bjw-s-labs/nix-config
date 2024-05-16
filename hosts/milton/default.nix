@@ -71,11 +71,6 @@ in
           ];
         };
 
-        dnsdist = {
-          enable = true;
-          config = builtins.readFile ./config/dnsdist.conf;
-        };
-
         node-exporter.enable = true;
 
         onepassword-connect = {
