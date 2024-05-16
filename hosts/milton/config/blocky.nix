@@ -20,7 +20,10 @@ in
     "tcp-tls:1.0.0.1:853"
   ];
 
+  caching.cacheTimeNegative = -1;
+
   conditional = {
+    fallbackUpstream = false;
     mapping = {
       "1.10.in-addr.arpa" = "10.1.0.1:53";
       "bjw-s.dev" = "127.0.0.1:5391";
