@@ -32,6 +32,12 @@ in
     };
   };
 
+  customDNS = {
+    mapping = {
+      "main.k8s.bjw-s.casa" = "10.1.1.30";
+    };
+  };
+
   # configuration of client name resolution
   clientLookup.upstream = "10.1.0.1:53";
 
