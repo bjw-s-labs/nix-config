@@ -23,5 +23,26 @@
       # Must match what is in /etc/shells
       sudo chsh -s /run/current-system/sw/bin/fish bjw-s
     '';
+
+    homebrew = {
+      taps = [
+      ];
+      brews = [
+      ];
+      casks = [
+        "discord"
+        "google-chrome"
+        "obsidian"
+        "orbstack"
+        "plex"
+        "tableplus"
+        "transmit"
+      ];
+      masApps = {
+        "Adguard for Safari" = 1440147259;
+        "Keka" = 470158793;
+        "Passepartout" = 1433648537;
+      };
+    };
   };
 }

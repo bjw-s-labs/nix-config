@@ -31,11 +31,13 @@
       ];
       casks = [
         "citrix-workspace"
+        "discord"
         "displaylink"
         "google-chrome"
         "microsoft-teams"
         "obsidian"
         "orbstack"
+        "plex"
         "slack"
         "tableplus"
         "transmit"
@@ -43,6 +45,7 @@
       masApps = {
         "Adguard for Safari" = 1440147259;
         "Keka" = 470158793;
+        "Passepartout" = 1433648537;
       };
     };
   };
