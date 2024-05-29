@@ -27,14 +27,13 @@ in
     mapping = {
       "1.10.in-addr.arpa" = "10.1.0.1:53";
       "bjw-s.dev" = "127.0.0.1:5391";
-      "bjw-s.casa" = "10.1.0.1:53";
       "internal" = "10.1.0.1:53";
     };
   };
 
   customDNS = {
     mapping = {
-      "main.k8s.bjw-s.casa" = "10.1.1.30";
+      "main.k8s.bjw-s.internal" = "10.1.1.30";
     };
   };
 

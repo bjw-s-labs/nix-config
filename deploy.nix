@@ -5,7 +5,7 @@
 }:
 let
   deployConfig = name: system: cfg: {
-    hostname = "${name}.bjw-s.casa";
+    hostname = "${name}.bjw-s.internal";
     sshOpts = cfg.sshOpts or ["-A"];
 
     profiles = {

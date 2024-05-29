@@ -71,12 +71,12 @@
       ssh = {
         enable = true;
         matchBlocks = {
-          "gladius.bjw-s.casa" = {
+          "gladius.bjw-s.internal" = {
             port = 22;
             user = "bjw-s";
             forwardAgent = true;
           };
-          "milton.bjw-s.casa" = {
+          "milton.bjw-s.internal" = {
             port = 22;
             user = "bjw-s";
             forwardAgent = true;
