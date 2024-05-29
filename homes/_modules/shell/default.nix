@@ -7,6 +7,7 @@
     ./bat
     ./bash
     ./btop
+    ./doggo
     ./eza
     ./fish
     ./git
