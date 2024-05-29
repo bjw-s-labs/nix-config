@@ -58,15 +58,6 @@ in
       };
 
       services = {
-        k3s = {
-          enable = false;
-          package = pkgs.unstable.k3s_1_29;
-          extraFlags = [
-            "--tls-san=${config.networking.hostName}.bjw-s.casa"
-            "--tls-san=nas.k8s.bjw-s.casa"
-          ];
-        };
-
         nginx = {
           enableAcme = true;
           acmeCloudflareAuthFile = config.sops.secrets."networking/cloudflare/auth".path;
