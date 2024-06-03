@@ -15,6 +15,9 @@
         "networking/cloudflare/auth" = {
           owner = config.users.users.acme.name;
         };
+        "users/bjw-s/password" = {
+          neededForUsers = true;
+        };
       };
     };
   };

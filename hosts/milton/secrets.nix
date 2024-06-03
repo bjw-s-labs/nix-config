@@ -25,6 +25,9 @@
           restartUnits = [ "bind.service" ];
           owner = config.users.users.named.name;
         };
+        "users/bjw-s/password" = {
+          neededForUsers = true;
+        };
       };
     };
   };

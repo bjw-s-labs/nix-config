@@ -29,6 +29,7 @@ in
       group = "bjw-s";
       shell = pkgs.fish;
       openssh.authorizedKeys.keys = lib.strings.splitString "\n" (builtins.readFile ../../homes/bjw-s/config/ssh/ssh.pub);
+      hashedPasswordFile = config.sops.secrets."users/bjw-s/password".path;
       isNormalUser = true;
       extraGroups =
         [
