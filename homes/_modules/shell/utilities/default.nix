@@ -2,6 +2,7 @@
   config = {
     home.packages = with pkgs;
       with flake-packages.${pkgs.system}; [
+        any-nix-shell
         binutils
         coreutils
         curl
