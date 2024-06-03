@@ -76,7 +76,7 @@
     supportedSystems = ["x86_64-linux" "aarch64-darwin"];
     forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     overlays = import ./overlays {inherit inputs;};
-    mkSystemLib = import ./lib/mkSystem.nix {inherit inputs;};
+    mkSystemLib = import ./lib/mkSystem.nix {inherit inputs overlays;};
     flake-packages = self.packages;
 
     legacyPackages = forAllSystems (
@@ -102,13 +102,13 @@
     );
 
     nixosConfigurations = {
-      gladius = mkSystemLib.mkNixosSystem "x86_64-linux" "gladius" overlays flake-packages;
-      milton = mkSystemLib.mkNixosSystem "x86_64-linux" "milton" overlays flake-packages;
+      gladius = mkSystemLib.mkNixosSystem "x86_64-linux" "gladius" flake-packages;
+      milton = mkSystemLib.mkNixosSystem "x86_64-linux" "milton" flake-packages;
     };
 
     darwinConfigurations = {
-      bernd-macbook = mkSystemLib.mkDarwinSystem "aarch64-darwin" "bernd-macbook" overlays flake-packages;
-      infraworkz = mkSystemLib.mkDarwinSystem "aarch64-darwin" "infraworkz" overlays flake-packages;
+      bernd-macbook = mkSystemLib.mkDarwinSystem "aarch64-darwin" "bernd-macbook" flake-packages;
+      infraworkz = mkSystemLib.mkDarwinSystem "aarch64-darwin" "infraworkz" flake-packages;
     };
 
     # Convenience output that aggregates the outputs for home, nixos.
