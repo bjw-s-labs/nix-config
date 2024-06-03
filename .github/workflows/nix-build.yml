@@ -28,41 +28,23 @@ jobs:
           - system: infraworkz
             os: macos-14
           - system: gladius
-            os: ubuntu-22.04
+            os: ubuntu-latest
           - system: milton
-            os: ubuntu-22.04
+            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Create nix mount point
-        if: contains(matrix.os, 'ubuntu')
-        run: sudo mkdir /nix
-
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v10
-        if: contains(matrix.os, 'ubuntu')
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          build-mount-path: "/nix"
-          remove-dotnet: true
-          remove-android: true
-          remove-haskell: true
-          remove-docker-images: true
-          remove-codeql: true
-          overprovision-lvm: true
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v27
-        with:
-          extra_nix_config: |
-            experimental-features = nix-command flakes
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-      - uses: cachix/cachix-action@v15
+        uses: DeterminateSystems/nix-installer-action@v11
+      - name: Set up Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v6
+
+      - name: Set up Cachix
+        uses: cachix/cachix-action@v15
         if: ${{ !github.event.pull_request.head.repo.fork }}
         with:
           name: bjw-s
@@ -89,6 +71,15 @@ jobs:
             -v \
             --log-format raw \
              > >(tee stdout.log) 2> >(tee /tmp/nix-build-err.log >&2)
+
+      - name: Push to Cachix
+        if: success()
+        env:
+          CACHIX_AUTH_TOKEN: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+        run: |
+          nix build ".#ciSystems.${{ matrix.system }}" --json \
+            | jq -r .[].drvPath \
+            | cachix push bjw-s
 
       - name: Output build failure
         if: failure()
