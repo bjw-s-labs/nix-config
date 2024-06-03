@@ -39,7 +39,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v11
+        uses: DeterminateSystems/nix-installer-action@v12
       - name: Set up Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v7
 
