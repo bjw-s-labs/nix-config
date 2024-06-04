@@ -14,7 +14,6 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.deploy-rs.deploy-rs
       pkgs.nixos-rebuild
       pkgs.nvd
     ];

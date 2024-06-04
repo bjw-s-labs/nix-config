@@ -18,14 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # deploy-rs
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     # sops-nix
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -67,7 +59,6 @@
     nix-inspect,
     nixvim,
     nix-vscode-extensions,
-    deploy-rs,
     sops-nix,
     rust-overlay,
     ...
@@ -123,5 +114,5 @@
           (attr: inputs.self.darwinConfigurations.${attr}.system);
       in
         nixos // darwin;
-  } // import ./deploy.nix inputs;
+  };
 }

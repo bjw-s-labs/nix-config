@@ -41,9 +41,11 @@ tasks:
       - sh: which darwin-rebuild
         msg: "darwin-rebuild not found"
 
-  deploy-nixos:
-    desc: Build and deploy nixos configuration using deploy-rs
+  build-nixos:
+    desc: Build nixos configuration
     silent: true
+    vars:
+      ssh_user: bjw-s
     summary: |
       Args:
         host: Host to build and deploy to (required)
@@ -51,12 +53,31 @@ tasks:
       vars:
         - host
     cmds:
-      - deploy "{{.ROOT_DIR}}/#{{.host}}" --interactive --skip-checks
+      - nix-shell -p nixos-rebuild --run 'nixos-rebuild build --flake .#{{.host}} --fast --use-remote-sudo --build-host "{{.ssh_user}}@{{.host}}.bjw-s.internal" --target-host "{{.ssh_user}}@{{.host}}.bjw-s.internal"'
     preconditions:
       - sh: which nix
         msg: "nix not found"
-      - sh: which deploy
-        msg: "deploy-rs not found"
+      - sh: which nixos-rebuild
+        msg: "nixos-rebuild not found"
+
+  apply-nixos:
+    desc: Build and apply nixos configuration
+    silent: true
+    vars:
+      ssh_user: bjw-s
+    summary: |
+      Args:
+        host: Host to build and deploy to (required)
+    requires:
+      vars:
+        - host
+    cmds:
+      - nix-shell -p nixos-rebuild --run 'nixos-rebuild switch --flake .#{{.host}} --fast --use-remote-sudo --build-host "{{.ssh_user}}@{{.host}}.bjw-s.internal" --target-host "{{.ssh_user}}@{{.host}}.bjw-s.internal"'
+    preconditions:
+      - sh: which nix
+        msg: "nix not found"
+      - sh: which nixos-rebuild
+        msg: "nixos-rebuild not found"
 
   .prompt_to_continue:
     internal: true

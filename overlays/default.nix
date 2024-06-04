@@ -3,8 +3,6 @@
   ...
 }:
 {
-  deploy-rs = inputs.deploy-rs.overlays.default;
-
   rust-overlay = inputs.rust-overlay.overlays.default;
 
   additions = final: prev: {
