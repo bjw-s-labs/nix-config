@@ -13,18 +13,6 @@
         };
         "networking/cloudflare/ddns/apiToken" = {};
         "networking/cloudflare/ddns/records" = {};
-        "networking/bind/rndc-key" = {
-          restartUnits = [ "bind.service" ];
-          owner = config.users.users.named.name;
-        };
-        "networking/bind/externaldns-key" = {
-          restartUnits = [ "bind.service" ];
-          owner = config.users.users.named.name;
-        };
-        "networking/bind/zones/bjw-s.dev" = {
-          restartUnits = [ "bind.service" ];
-          owner = config.users.users.named.name;
-        };
         "users/bjw-s/password" = {
           neededForUsers = true;
         };
