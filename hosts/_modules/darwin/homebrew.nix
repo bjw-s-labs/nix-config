@@ -17,8 +17,8 @@ _:
     ];
     casks = [
       "1password"
-      "bartender"
       "iterm2"
+      "jordanbaird-ice"
       "karabiner-elements"
       "keyboard-maestro"
       "notunes"
