@@ -6,11 +6,7 @@
 }:
 let
   cfg = config.modules.kubernetes;
-  package = pkgs.unstable.kubecm.overrideAttrs (_: prev: {
-    meta = prev.meta // {
-      mainProgram = "kubecm";
-    };
-  });
+  package = pkgs.unstable.kubecm;
 in
 {
   config = lib.mkMerge [

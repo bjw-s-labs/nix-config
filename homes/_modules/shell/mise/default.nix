@@ -10,10 +10,13 @@ let
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  # TODO: Replace with official home manager module once available
   options.modules.shell.mise = {
     enable = lib.mkEnableOption "mise";
     package = lib.mkPackageOption pkgs "mise" { };
+    globalConfig = lib.mkOption {
+      inherit (tomlFormat) type;
+      default = { };
+    };
     settings = lib.mkOption {
       inherit (tomlFormat) type;
       default = { };
@@ -27,7 +30,10 @@ in
     ];
 
     xdg.configFile = {
-      "mise/settings.toml" = {
+      "mise/config.toml" = lib.mkIf (cfg.globalConfig != { }) {
+        source = tomlFormat.generate "mise-config" cfg.globalConfig;
+      };
+      "mise/settings.toml" = lib.mkIf (cfg.settings != { }) {
         source = tomlFormat.generate "mise-settings" (
           {
             experimental = true;

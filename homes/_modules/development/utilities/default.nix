@@ -13,7 +13,7 @@ in
     home.packages = with pkgs; [
       cue
       nixd
-      nixfmt
+      nixfmt-rfc-style
       nodePackages.prettier
       pre-commit
       shellcheck

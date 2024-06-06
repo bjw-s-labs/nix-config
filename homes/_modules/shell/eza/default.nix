@@ -7,7 +7,8 @@ _:
       extraOptions = [
         "--group"
       ];
-      enableAliases = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
     };
   };
 }

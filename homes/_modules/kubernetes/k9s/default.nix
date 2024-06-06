@@ -83,10 +83,6 @@ in
           };
         };
       };
-
-      # TODO: Remove tihs jank when home-manager 24.05 becomes stable
-      xdg.configFile."k9s/aliases.yaml".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/k9s/aliases.yml";
-      xdg.configFile."k9s/config.yaml".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/k9s/config.yml";
     })
   ];
 }
