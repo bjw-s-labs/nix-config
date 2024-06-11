@@ -17,6 +17,7 @@ _:
     ];
     casks = [
       "1password"
+      "gifox"
       "iterm2"
       "jordanbaird-ice"
       "karabiner-elements"
