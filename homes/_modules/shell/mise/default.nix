@@ -33,7 +33,7 @@ in
       "mise/config.toml" = lib.mkIf (cfg.globalConfig != { }) {
         source = tomlFormat.generate "mise-config" cfg.globalConfig;
       };
-      "mise/settings.toml" = lib.mkIf (cfg.settings != { }) {
+      "mise/settings.toml" = {
         source = tomlFormat.generate "mise-settings" (
           {
             experimental = true;
