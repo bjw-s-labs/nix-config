@@ -43,7 +43,7 @@ in
 
   blocking = {
     loading.downloads.timeout = "4m";
-    blackLists = {
+    denylists = {
       ads = [
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
       ];
@@ -55,7 +55,7 @@ in
       ];
     };
 
-    whiteLists = {
+    allowlists = {
       ads = [
         "file://${ads-whitelist}"
       ];
