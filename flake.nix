@@ -43,8 +43,7 @@
 
     # Catppuccin
     catppuccin = {
-      # url = "github:catppuccin/nix";
-      url = "github:bjw-s/catppuccin-nix";
+      url = "github:catppuccin/nix/v1.0.1";
     };
 
     nix-inspect.url = "github:bluskript/nix-inspect";
