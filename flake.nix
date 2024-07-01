@@ -46,7 +46,10 @@
       url = "github:catppuccin/nix/v1.0.1";
     };
 
-    nix-inspect.url = "github:bluskript/nix-inspect";
+    # Nix Inspect
+    nix-inspect = {
+      url = "github:bluskript/nix-inspect";
+    };
   };
 
   outputs = {
