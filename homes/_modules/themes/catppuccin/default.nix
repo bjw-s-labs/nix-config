@@ -10,13 +10,13 @@ in
 {
   options.modules.themes.catppuccin = {
     enable = lib.mkEnableOption "catppuccin";
-    flavour = lib.mkOption {
+    flavor = lib.mkOption {
       type = lib.types.str;
       default = false;
     };
   };
 
   config = lib.mkIf cfg.enable {
-    catppuccin.flavour = cfg.flavour;
+    catppuccin.flavor = cfg.flavor;
   };
 }
