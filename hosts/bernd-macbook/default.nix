@@ -30,6 +30,7 @@
       brews = [
       ];
       casks = [
+        "anylist"
         "discord"
         "google-chrome"
         "obsidian"
