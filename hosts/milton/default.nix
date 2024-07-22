@@ -51,12 +51,6 @@ in
 
     modules = {
       services = {
-        blocky = {
-          enable = true;
-          package = pkgs.unstable.blocky;
-          config = import ./config/blocky.nix;
-        };
-
         chrony = {
           enable = true;
           servers = [
