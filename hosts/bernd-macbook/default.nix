@@ -38,6 +38,7 @@
         "plex"
         "tableplus"
         "transmit"
+        "wireshark"
       ];
       masApps = {
         "Adguard for Safari" = 1440147259;
