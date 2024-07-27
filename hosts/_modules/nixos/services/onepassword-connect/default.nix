@@ -13,7 +13,7 @@ in
     apiVersion = lib.mkOption {
       type = lib.types.string;
       # renovate: depName=docker.io/1password/connect-api datasource=docker
-      default = "1.7.2";
+      default = "1.7.3";
     };
     syncVersion = lib.mkOption {
       type = lib.types.string;
