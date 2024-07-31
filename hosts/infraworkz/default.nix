@@ -43,7 +43,7 @@
         "transmit"
       ];
       masApps = {
-        "Adguard for Safari" = 1440147259;
+        "Ghostery" = 6504861501;
         "Keka" = 470158793;
         "Passepartout" = 1433648537;
       };
