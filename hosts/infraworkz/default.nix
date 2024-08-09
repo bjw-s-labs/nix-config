@@ -43,7 +43,7 @@
         "transmit"
       ];
       masApps = {
-        "Ghostery" = 6504861501;
+        "1Blocker" = 1365531024;
         "Keka" = 470158793;
         "Passepartout" = 1433648537;
       };
