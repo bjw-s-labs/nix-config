@@ -23,6 +23,10 @@ in {
       type = lib.types.attrs;
       default = {};
     };
+    includes = lib.mkOption {
+      type = lib.types.listOf lib.types.attrs;
+      default = {};
+    };
   };
 
   config = lib.mkMerge [
@@ -53,6 +57,8 @@ in {
           }
           cfg.config
         ];
+
+        includes = cfg.includes;
 
         aliases = {
           co = "checkout";
