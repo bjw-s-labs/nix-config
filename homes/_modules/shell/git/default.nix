@@ -25,7 +25,7 @@ in {
     };
     includes = lib.mkOption {
       type = lib.types.listOf lib.types.attrs;
-      default = {};
+      default = [];
     };
   };
 
