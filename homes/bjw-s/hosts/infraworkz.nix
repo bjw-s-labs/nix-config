@@ -27,11 +27,11 @@
     security.gnugpg.enable = true;
     shell = {
       git = {
-        config = {
-          include = {
+        includes = [
+          {
             path = "${config.xdg.configHome}/git/work_config";
-          };
-        };
+          }
+        ];
       };
       mise = {
         enable = true;
