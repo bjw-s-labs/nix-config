@@ -10,7 +10,7 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
+    home.packages = (with pkgs; [
       cue
       nixd
       nixfmt-rfc-style
@@ -21,6 +21,8 @@ in
       yamllint
       unstable.helm-ls
       unstable.minio-client
+    ]) ++
+    [
       inputs.nix-inspect.packages.${pkgs.system}.default
     ];
   };

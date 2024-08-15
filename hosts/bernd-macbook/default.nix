@@ -28,6 +28,7 @@
       taps = [
       ];
       brews = [
+        "cidr"
       ];
       casks = [
         "anylist"
