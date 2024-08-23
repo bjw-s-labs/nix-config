@@ -36,6 +36,7 @@
         "google-chrome"
         "obsidian"
         "orbstack"
+        "openscad@snapshot"
         "plex"
         "tableplus"
         "transmit"
