@@ -92,9 +92,6 @@
       "enabled": false
     }
   },
-  "sops-edit": {
-    "tempFilePreExtension": "decrypted"
-  },
   "terminal.integrated.inheritEnv": true,
   "todo-tree": {
     "highlights": {

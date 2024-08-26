@@ -62,7 +62,7 @@
             ionutvmi.path-autocomplete
             luisfontes19.vscode-swissknife
             ms-kubernetes-tools.vscode-kubernetes-tools
-            shipitsmarter.sops-edit
+            signageos.signageos-vscode-sops
           ];
       };
     };
