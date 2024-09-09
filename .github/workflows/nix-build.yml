@@ -97,7 +97,6 @@ jobs:
         with:
           app-id: ${{ secrets.LAB_ASSISTANT_APP_ID }}
           private-key: ${{ secrets.LAB_ASSISTANT_APP_KEY }}
-          owner: ${{ github.repository_owner }}
 
       - name: Comment report in pr
         uses: marocchino/sticky-pull-request-comment@v2
