@@ -50,6 +50,12 @@
     nix-inspect = {
       url = "github:bluskript/nix-inspect";
     };
+
+    # krewfile
+    krewfile = {
+      url = "github:brumhard/krewfile";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -63,6 +69,7 @@
     nix-vscode-extensions,
     sops-nix,
     rust-overlay,
+    krewfile,
     ...
   } @inputs:
   let
