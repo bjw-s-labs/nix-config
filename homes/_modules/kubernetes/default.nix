@@ -17,6 +17,7 @@ in
       kubectl-browse-pvc
       kubectl-get-all
       kubectl-netshoot
+      kubectl-pgo
       talhelper
     ]) ++
     (with pkgs.unstable; [

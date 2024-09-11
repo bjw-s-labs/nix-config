@@ -2,7 +2,6 @@
   lib,
   fetchFromGitHub,
   buildGoModule,
-  installShellFiles,
   ...
 }:
 
@@ -19,7 +18,6 @@ buildGoModule rec {
 
   vendorHash = "sha256-VgT42lIlNJw6OT23CuHLEh7PRgyCfmwkuWwIQpNqBfo=";
 
-  nativeBuildInputs = [ installShellFiles ];
   doCheck = false;
 
   tags = [
