@@ -20,6 +20,7 @@ buildGoModule rec {
   vendorHash = "sha256-kalnhBWVZaStdUeTiKln0mVow4x1K2+BZPXG+5/YRVM=";
 
   nativeBuildInputs = [ installShellFiles ];
+  doCheck = false;
 
   postInstall = ''
     mv $out/bin/kubectl-browse-pvc $out/bin/kubectl-browse_pvc

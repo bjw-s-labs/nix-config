@@ -5,7 +5,17 @@
 }:
 {
   nix = {
+    registry = {
+      stable.flake = inputs.nixpkgs;
+      unstable.flake = inputs.nixpkgs-unstable;
+    };
+    channel.enable = false;
+
     settings = {
+      # NIX_PATH is still used by many useful tools, so we set it to the same value as the one used by this flake
+      # make `nix repl '<nixpkgs>'` use the same nixpkgs as the one used by this flake
+      nix-path = "nixpkgs=${inputs.nixpkgs.outPath}";
+
       trusted-substituters = [
         "https://nix-community.cachix.org"
         "https://cache.garnix.io"
@@ -40,6 +50,13 @@
 
       # Avoid copying unnecessary stuff over SSH
       builders-use-substitutes = true;
+
+      auto-optimise-store = true;
+      keep-outputs = true;
+      keep-derivations = false;
+
+      # this makes sure to always check for new commits when fetching source
+      tarball-ttl = 0;
     };
 
     # Add nixpkgs input to NIX_PATH

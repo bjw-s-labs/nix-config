@@ -50,6 +50,12 @@
     nix-inspect = {
       url = "github:bluskript/nix-inspect";
     };
+
+    # Talhelper - A tool to help creating Talos Kubernetes cluster
+    # https://github.com/budimanjojo/talhelper
+    talhelper = {
+      url = "github:budimanjojo/talhelper";
+    };
   };
 
   outputs = {
@@ -63,6 +69,7 @@
     nix-vscode-extensions,
     sops-nix,
     rust-overlay,
+    talhelper,
     ...
   } @inputs:
   let

@@ -5,6 +5,12 @@
 {
   rust-overlay = inputs.rust-overlay.overlays.default;
 
+  additions = final: _prev:
+    import ../pkgs {
+      inherit inputs;
+      pkgs = final;
+    };
+
   # The unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through `pkgs.unstable`
   unstable-packages = final: prev: {
