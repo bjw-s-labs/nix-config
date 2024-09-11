@@ -31,7 +31,6 @@
             sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
               inputs.catppuccin.homeManagerModules.catppuccin
-              inputs.krewfile.homeManagerModules.krewfile
             ];
             extraSpecialArgs = {
               inherit inputs hostname flake-packages;
@@ -75,7 +74,6 @@
               inputs.sops-nix.homeManagerModules.sops
               inputs.nixvim.homeManagerModules.nixvim
               inputs.catppuccin.homeManagerModules.catppuccin
-              inputs.krewfile.homeManagerModules.krewfile
             ];
             extraSpecialArgs = {
               inherit inputs hostname flake-packages;

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 let
@@ -9,11 +10,9 @@ in
 {
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
-      programs.fish = {
-        interactiveShellInit = ''
-          flux completion fish | source
-        '';
-      };
+      home.packages = (with pkgs.unstable; [
+        fluxcd
+      ]);
     })
   ];
 }

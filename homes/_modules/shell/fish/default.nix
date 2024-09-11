@@ -44,12 +44,10 @@ in {
 
           # Paths are in reverse priority order
           update_path /opt/homebrew/bin
-          update_path ${homeDirectory}/.krew/bin
           update_path /nix/var/nix/profiles/default/bin
           update_path /run/current-system/sw/bin
           update_path /etc/profiles/per-user/${username}/bin
           update_path /run/wrappers/bin
-          update_path ${homeDirectory}/.nix-profile/bin
           update_path ${homeDirectory}/go/bin
           update_path ${homeDirectory}/.cargo/bin
           update_path ${homeDirectory}/.local/bin
