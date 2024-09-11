@@ -19,6 +19,12 @@
       mise = {
         enable = true;
         package = pkgs.unstable.mise;
+        globalConfig = {
+          tools = {
+            python = "latest";
+            node = "latest";
+          };
+        };
       };
     };
   };
