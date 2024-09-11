@@ -42,6 +42,9 @@ in
           {
             experimental = true;
             python_venv_auto_create = true;
+            disable_hints = [
+              "*"
+            ];
           } //
           cfg.settings
         );
