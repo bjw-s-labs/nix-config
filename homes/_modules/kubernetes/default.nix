@@ -16,6 +16,7 @@ in
     home.packages = (with pkgs; [
       kubectl-browse-pvc
       kubectl-get-all
+      kubectl-klock
       kubectl-netshoot
       kubectl-pgo
       talhelper
