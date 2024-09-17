@@ -6,6 +6,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    # Lix - Substitution of the Nix package manager
+    # https://git.lix.systems/lix-project/lix
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -62,6 +69,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    lix-module,
     home-manager,
     nix-darwin,
     nix-inspect,

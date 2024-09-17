@@ -3,6 +3,8 @@
   ...
 }:
 {
+  lix-overlay = inputs.lix-module.overlays.default;
+
   rust-overlay = inputs.rust-overlay.overlays.default;
 
   additions = final: _prev:
