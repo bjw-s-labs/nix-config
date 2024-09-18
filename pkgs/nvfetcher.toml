@@ -1,0 +1,21 @@
+[kubectl-browse-pvc]
+src.github = "clbx/kubectl-browse-pvc"
+fetch.github = "clbx/kubectl-browse-pvc"
+[kubectl-get-all]
+src.github = "corneliusweig/ketall"
+fetch.github = "corneliusweig/ketall"
+[kubectl-klock]
+src.github = "applejag/kubectl-klock"
+fetch.github = "applejag/kubectl-klock"
+[kubectl-netshoot]
+src.github = "nilic/kubectl-netshoot"
+fetch.github = "nilic/kubectl-netshoot"
+[kubectl-pgo]
+src.github = "CrunchyData/postgres-operator-client"
+fetch.github = "CrunchyData/postgres-operator-client"
+[shcopy]
+src.github = "aymanbagabas/shcopy"
+fetch.github = "aymanbagabas/shcopy"
+[usage-cli]
+src.github = "jdx/usage"
+fetch.github = "jdx/usage"

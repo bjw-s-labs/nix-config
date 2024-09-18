@@ -1,0 +1,53 @@
+name: Update nvfetcher
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: 0 * * * *
+  push:
+    branches:
+      - main
+    paths:
+      - pkgs/nvfetcher.toml
+
+jobs:
+  update-nvfetcher:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v13
+
+      - name: Run nvfetcher
+        id: run-nvfetcher
+        run: |
+          cd pkgs
+          {
+            echo 'changes<<EOF'
+            nix-shell -p nvfetcher --command 'nvfetcher' | sed -n '/Changes/,/$!d/p'
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.LAB_ASSISTANT_APP_ID }}
+          private-key: ${{ secrets.LAB_ASSISTANT_APP_KEY }}
+
+      - name: Create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          title: "chore(deps): Update packages managed by nvfetcher"
+          commit-message: "chore(deps): Update packages managed by nvfetcher"
+          body: |
+            ## ${{ steps.run-nvfetcher.outputs.changes }}
+          add-paths: |
+            pkgs/**
+          delete-branch: true
