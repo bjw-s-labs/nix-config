@@ -4,7 +4,7 @@
   ...
 }:
 {
-  mkNixosSystem = system: hostname: flake-packages:
+  mkNixosSystem = system: hostname:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       pkgs = import inputs.nixpkgs {
@@ -19,7 +19,7 @@
         {
           nixpkgs.hostPlatform = system;
           _module.args = {
-            inherit inputs flake-packages;
+            inherit inputs system;
           };
         }
         inputs.home-manager.nixosModules.home-manager
@@ -33,7 +33,7 @@
               inputs.catppuccin.homeManagerModules.catppuccin
             ];
             extraSpecialArgs = {
-              inherit inputs hostname flake-packages;
+              inherit inputs hostname system;
             };
             users.bjw-s = ../. + "/homes/bjw-s";
           };
@@ -47,7 +47,7 @@
       };
     };
 
-  mkDarwinSystem = system: hostname: flake-packages:
+  mkDarwinSystem = system: hostname:
     inputs.nix-darwin.lib.darwinSystem {
       inherit system;
       pkgs = import inputs.nixpkgs {
@@ -62,7 +62,7 @@
         {
           nixpkgs.hostPlatform = system;
           _module.args = {
-            inherit inputs flake-packages;
+            inherit inputs;
           };
         }
         inputs.home-manager.darwinModules.home-manager
@@ -76,7 +76,7 @@
               inputs.catppuccin.homeManagerModules.catppuccin
             ];
             extraSpecialArgs = {
-              inherit inputs hostname flake-packages;
+              inherit inputs hostname system;
             };
             users.bjw-s = ../. + "/homes/bjw-s";
           };

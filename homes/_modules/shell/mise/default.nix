@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  flake-packages,
   ...
 }:
 let
@@ -26,7 +25,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       cfg.package
-      flake-packages.${pkgs.system}.usage
+      pkgs.usage
     ];
 
     home.activation.miseInstall = ''

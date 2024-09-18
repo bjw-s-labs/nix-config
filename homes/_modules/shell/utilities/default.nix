@@ -1,25 +1,24 @@
-{ pkgs, flake-packages, ... }: {
+{ pkgs, ... }: {
   config = {
-    home.packages = with pkgs;
-      with flake-packages.${pkgs.system}; [
-        any-nix-shell
-        binutils
-        coreutils
-        curl
-        du-dust
-        envsubst
-        findutils
-        fish
-        gawk
-        gnused
-        gum
-        jo
-        jq
-        shcopy
-        tmux
-        vim
-        wget
-        yq-go
-      ];
+    home.packages = with pkgs; [
+      any-nix-shell
+      binutils
+      coreutils
+      curl
+      du-dust
+      envsubst
+      findutils
+      fish
+      gawk
+      gnused
+      gum
+      jo
+      jq
+      shcopy
+      tmux
+      vim
+      wget
+      yq-go
+    ];
   };
 }

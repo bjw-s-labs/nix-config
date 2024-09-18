@@ -4,7 +4,6 @@
   config,
   inputs,
   hostname,
-  flake-packages,
   ...
 }:
 {
@@ -19,7 +18,7 @@
     editor = {
       nvim = {
         enable = true;
-        package = flake-packages.${pkgs.system}.nvim;
+        package = pkgs.nvim;
         makeDefaultEditor = true;
       };
 
