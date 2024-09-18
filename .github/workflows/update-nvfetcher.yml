@@ -44,6 +44,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.app-token.outputs.token }}
+          branch: nvfetcher/deps
           title: "chore(deps): Update packages managed by nvfetcher"
           commit-message: "chore(deps): Update packages managed by nvfetcher"
           body: |

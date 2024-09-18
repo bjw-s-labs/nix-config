@@ -1,22 +1,17 @@
 {
+  pkgs,
   lib,
-  fetchFromGitHub,
   buildGoModule,
   ...
 }:
-
+let
+  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  packagedata = sourceData.kubectl-get-all;
+in
 buildGoModule rec {
-  pname = "kubectl-get-all";
-  version = "1.3.8";
-
-  src = fetchFromGitHub {
-    owner = "timebertt";
-    repo = "ketall";
-    rev = "upgrade-dependencies";
-    hash = "sha256-qyyKnN7lY0zU8XUe+El2XIkGJ0bP4FoIfpjtKUfgfLU=";
-  };
-
-  vendorHash = "sha256-VgT42lIlNJw6OT23CuHLEh7PRgyCfmwkuWwIQpNqBfo=";
+  inherit (packagedata) pname src;
+  version = lib.strings.removePrefix "v" packagedata.version;
+  vendorHash = "sha256-lxfWJ7t/IVhIfvDUIESakkL8idh+Q/wl8B1+vTpb5a4=";
 
   doCheck = false;
 
@@ -35,7 +30,7 @@ buildGoModule rec {
     chmod u+x $out/bin/kubectl_complete-get_all
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Kubernetes CLI plugin to really get all resources";
     mainProgram = "kubectl-get-all";
     homepage = "https://github.com/corneliusweig/ketall";
