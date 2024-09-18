@@ -29,8 +29,6 @@ jobs:
             os: macos-14
           - system: gladius
             os: ubuntu-latest
-          - system: milton
-            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
