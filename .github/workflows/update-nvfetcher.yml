@@ -21,6 +21,8 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v13
+      - name: Set up Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v7
 
       - name: Run nvfetcher
         id: run-nvfetcher
@@ -44,6 +46,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.app-token.outputs.token }}
+          branch: nvfetcher/deps
           title: "chore(deps): Update packages managed by nvfetcher"
           commit-message: "chore(deps): Update packages managed by nvfetcher"
           body: |

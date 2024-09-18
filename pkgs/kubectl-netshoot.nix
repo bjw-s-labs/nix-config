@@ -1,21 +1,16 @@
 {
+  pkgs,
   lib,
-  fetchFromGitHub,
   buildGoModule,
   ...
 }:
-
+let
+  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  packageData = sourceData.kubectl-netshoot;
+in
 buildGoModule rec {
-  pname = "kubectl-netshoot";
-  version = "0.1.0";
-
-  src = fetchFromGitHub {
-    owner = "nilic";
-    repo = pname;
-    rev = "v${version}";
-    hash = "sha256-6IQmD2tJ1qdjeJqOnHGSpfNg6rxDRmdW9a9Eon/EdsM=";
-  };
-
+  inherit (packageData) pname src;
+  version = lib.strings.removePrefix "v" packageData.version;
   vendorHash = "sha256-x8Jvi+RX63wpyICI2GHqDTteV877evzfCxZDOnkBDWA=";
 
   doCheck = false;
@@ -28,7 +23,7 @@ buildGoModule rec {
     chmod u+x $out/bin/kubectl_complete-netshoot
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Kubernetes CLI plugin to spin up netshoot container for network troubleshooting";
     mainProgram = "kubectl-netshoot";
     homepage = "https://github.com/nilic/kubectl-netshoot";

@@ -1,21 +1,16 @@
 {
+  pkgs,
   lib,
-  fetchFromGitHub,
   buildGoModule,
   ...
 }:
-
+let
+  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  packageData = sourceData.kubectl-klock;
+in
 buildGoModule rec {
-  pname = "kubectl-klock";
-  version = "0.7.0";
-
-  src = fetchFromGitHub {
-    owner = "applejag";
-    repo = "kubectl-klock";
-    rev = "v${version}";
-    hash = "sha256-MmsHxB15gCz2W2QLC6E7Ao+9iLyVaYJatUgPcMuL79M=";
-  };
-
+  inherit (packageData) pname src;
+  version = lib.strings.removePrefix "v" packageData.version;
   vendorHash = "sha256-lhawUcjB2EULpAFjBM4tdmDo08za2DfyZUvEPo4+LXE=";
 
   doCheck = false;
@@ -28,7 +23,7 @@ buildGoModule rec {
     chmod u+x $out/bin/kubectl_complete-klock
   '';
 
-  meta = with lib; {
+  meta = {
     description = "A kubectl plugin to render watch output in a more readable fashion";
     mainProgram = "kubectl-klock";
     homepage = "https://github.com/applejag/kubectl-klock";

@@ -1,0 +1,142 @@
+{
+    "kubectl-browse-pvc": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kubectl-browse-pvc",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "clbx",
+            "repo": "kubectl-browse-pvc",
+            "rev": "v1.0.7",
+            "sha256": "sha256-Ql+mMgpmcbGy5TwQrv8f9uWK9yNXfHykNDnOrp4E7+I=",
+            "type": "github"
+        },
+        "version": "v1.0.7"
+    },
+    "kubectl-get-all": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kubectl-get-all",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "corneliusweig",
+            "repo": "ketall",
+            "rev": "v1.3.8",
+            "sha256": "sha256-Mau57mXS78fHyeU0OOz3Tms0WNu7HixfAZZL3dmcj3w=",
+            "type": "github"
+        },
+        "version": "v1.3.8"
+    },
+    "kubectl-klock": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kubectl-klock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "applejag",
+            "repo": "kubectl-klock",
+            "rev": "v0.7.0",
+            "sha256": "sha256-MmsHxB15gCz2W2QLC6E7Ao+9iLyVaYJatUgPcMuL79M=",
+            "type": "github"
+        },
+        "version": "v0.7.0"
+    },
+    "kubectl-netshoot": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kubectl-netshoot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nilic",
+            "repo": "kubectl-netshoot",
+            "rev": "v0.1.0",
+            "sha256": "sha256-6IQmD2tJ1qdjeJqOnHGSpfNg6rxDRmdW9a9Eon/EdsM=",
+            "type": "github"
+        },
+        "version": "v0.1.0"
+    },
+    "kubectl-pgo": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kubectl-pgo",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "CrunchyData",
+            "repo": "postgres-operator-client",
+            "rev": "v0.4.2",
+            "sha256": "sha256-m1USG4Po+H9trrx4+Zw8SDCpXecEipawdwCYBLsuxd8=",
+            "type": "github"
+        },
+        "version": "v0.4.2"
+    },
+    "shcopy": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "shcopy",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "aymanbagabas",
+            "repo": "shcopy",
+            "rev": "v0.1.3",
+            "sha256": "sha256-lEYMBBtBGAJjU0F1HgvuH0inW6S5E9DyKxwQ6A9tdM4=",
+            "type": "github"
+        },
+        "version": "v0.1.3"
+    },
+    "usage-cli": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "usage-cli",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jdx",
+            "repo": "usage",
+            "rev": "v0.3.1",
+            "sha256": "sha256-9zQ+gkBVhzjqSIieGjxoD9vc7999lfRQ7awkvlEkseE=",
+            "type": "github"
+        },
+        "version": "v0.3.1"
+    }
+}
