@@ -34,6 +34,7 @@
         "anylist"
         "discord"
         "google-chrome"
+        "halloy"
         "obsidian"
         "orbstack"
         "openscad@snapshot"

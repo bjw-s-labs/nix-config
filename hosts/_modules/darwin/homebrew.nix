@@ -22,7 +22,6 @@ _:
       "jordanbaird-ice"
       "karabiner-elements"
       "keyboard-maestro"
-      "notunes"
       "raycast"
       "shottr"
     ];
