@@ -113,11 +113,11 @@
             "name": null,
             "owner": "aymanbagabas",
             "repo": "shcopy",
-            "rev": "v0.1.3",
-            "sha256": "sha256-lEYMBBtBGAJjU0F1HgvuH0inW6S5E9DyKxwQ6A9tdM4=",
+            "rev": "v0.1.5",
+            "sha256": "sha256-MKlW8HrkXCYCOeO38F0S4c8mVbsG/VcZ+oGFC70amqQ=",
             "type": "github"
         },
-        "version": "v0.1.3"
+        "version": "v0.1.5"
     },
     "usage-cli": {
         "cargoLocks": null,

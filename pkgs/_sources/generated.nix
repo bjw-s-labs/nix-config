@@ -58,13 +58,13 @@
   };
   shcopy = {
     pname = "shcopy";
-    version = "v0.1.3";
+    version = "v0.1.5";
     src = fetchFromGitHub {
       owner = "aymanbagabas";
       repo = "shcopy";
-      rev = "v0.1.3";
+      rev = "v0.1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-lEYMBBtBGAJjU0F1HgvuH0inW6S5E9DyKxwQ6A9tdM4=";
+      sha256 = "sha256-MKlW8HrkXCYCOeO38F0S4c8mVbsG/VcZ+oGFC70amqQ=";
     };
   };
   usage-cli = {
