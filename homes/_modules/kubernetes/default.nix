@@ -31,7 +31,11 @@ in
       kubectl-neat
       kubectl-node-shell
       kubectl-view-secret
-      kubernetes-helm
+      (wrapHelm kubernetes-helm {
+        plugins = [
+          kubernetes-helmPlugins.helm-unittest
+        ];
+      })
       stern
       talosctl
     ]);
