@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.modules.kubernetes;
+  catppuccinCfg = config.modules.themes.catppuccin;
 
   # https://nixos.wiki/wiki/Helm_and_Helmfile
   wrappedHelmPkg = (pkgs.unstable.wrapHelm pkgs.unstable.kubernetes-helm {
@@ -20,6 +21,13 @@ let
   wrappedHelmfilePkg = pkgs.unstable.helmfile-wrapped.override {
     inherit (wrappedHelmPkg) pluginsDir;
   };
+
+  kubecolor-catppuccin = (pkgs.fetchFromGitHub {
+    owner = "vkhitrin";
+    repo = "kubecolor-catppuccin";
+    rev = "1d4c2888f7de077e1a837a914a1824873d16762d";
+    sha256 = "sha256-gTneUh6yMcH6dVKrH00G61a+apasu9tiMyYjvNdOiOw";
+  });
 in
 {
   options.modules.kubernetes = {
@@ -52,6 +60,10 @@ in
       wrappedHelmPkg
       wrappedHelmfilePkg
     ];
+
+    home.sessionVariables = {
+      KUBECOLOR_CONFIG = "${kubecolor-catppuccin}/catppuccin-${catppuccinCfg.flavor}.yaml";
+    };
 
     programs.k9s = {
       enable = true;
