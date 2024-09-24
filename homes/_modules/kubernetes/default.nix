@@ -40,6 +40,7 @@ in
       krew
       kubecm
       kubeconform
+      kubecolor
       kubectl
       kubectl-neat
       kubectl-node-shell
@@ -139,6 +140,7 @@ in
         };
       };
       shellAliases = {
+        kubectl = "kubecolor";
         k = "kubectl";
         kc = "kubecm";
       };
