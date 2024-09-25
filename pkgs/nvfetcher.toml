@@ -1,3 +1,7 @@
+[kubecolor-catppuccin]
+src.git = "https://github.com/vkhitrin/kubecolor-catppuccin.git"
+src.branch = "main"
+fetch.github = "vkhitrin/kubecolor-catppuccin"
 [kubectl-browse-pvc]
 src.github = "clbx/kubectl-browse-pvc"
 fetch.github = "clbx/kubectl-browse-pvc"

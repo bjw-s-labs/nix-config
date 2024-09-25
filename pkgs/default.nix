@@ -6,6 +6,7 @@
   ...
 } @_inputs:
 {
+  kubecolor-catppuccin = pkgs.callPackage ./kubecolor-catppuccin.nix {};
   kubectl-browse-pvc = pkgs.callPackage ./kubectl-browse-pvc.nix {};
   kubectl-get-all = pkgs.callPackage ./kubectl-get-all.nix {};
   kubectl-klock = pkgs.callPackage ./kubectl-klock.nix {};
