@@ -79,6 +79,17 @@
       sha256 = "sha256-MKlW8HrkXCYCOeO38F0S4c8mVbsG/VcZ+oGFC70amqQ=";
     };
   };
+  talosctl = {
+    pname = "talosctl";
+    version = "v1.8.0";
+    src = fetchFromGitHub {
+      owner = "siderolabs";
+      repo = "talos";
+      rev = "v1.8.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-Ezie6RQsigmJgdvnSVk6awuUu2kODSio9DNg4bow76M=";
+    };
+  };
   usage-cli = {
     pname = "usage-cli";
     version = "v0.5.1";

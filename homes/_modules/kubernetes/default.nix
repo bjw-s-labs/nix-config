@@ -36,6 +36,7 @@ in
       kubectl-netshoot
       kubectl-pgo
       talhelper
+      talosctl
     ]) ++
     (with pkgs.unstable; [
       fluxcd
@@ -48,7 +49,6 @@ in
       kubectl-node-shell
       kubectl-view-secret
       stern
-      talosctl
     ]) ++
     [
       wrappedHelmPkg

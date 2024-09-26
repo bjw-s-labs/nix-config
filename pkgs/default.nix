@@ -15,5 +15,6 @@
   nvim = pkgs.callPackage ./nvim.nix _inputs;
   shcopy = pkgs.callPackage ./shcopy.nix {};
   talhelper = inputs.talhelper.packages.${pkgs.system}.default;
+  talosctl = pkgs.callPackage ./talosctl.nix {};
   usage = pkgs.callPackage ./usage.nix {};
 }

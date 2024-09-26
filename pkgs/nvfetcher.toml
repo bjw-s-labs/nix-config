@@ -20,6 +20,9 @@ fetch.github = "CrunchyData/postgres-operator-client"
 [shcopy]
 src.github = "aymanbagabas/shcopy"
 fetch.github = "aymanbagabas/shcopy"
+[talosctl]
+src.github = "siderolabs/talos"
+fetch.github = "siderolabs/talos"
 [usage-cli]
 src.github = "jdx/usage"
 fetch.github = "jdx/usage"
