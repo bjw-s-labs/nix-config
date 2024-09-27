@@ -34,14 +34,14 @@
 
             # Language support
             golang.go
-            hashicorp.terraform
+            # hashicorp.terraform
             helm-ls.helm-ls
             jnoortheen.nix-ide
-            mrmlnc.vscode-json5
             ms-azuretools.vscode-docker
             ms-python.python
-            redhat.ansible
+            # redhat.ansible
             redhat.vscode-yaml
+            savh.json5-kit
             tamasfe.even-better-toml
 
             # Formatters
