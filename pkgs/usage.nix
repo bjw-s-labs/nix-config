@@ -16,9 +16,11 @@ in
 rustPlatform.buildRustPackage rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
-  cargoHash = "sha256-gEZOphc3imOR01MpduUn5+s8gbmNr0yjXarKGfVk/1c=";
+  cargoHash = "sha256-u04eVpmMnmsJqJVKSzc/Ja4o///sOTmvpMSwYSXfVyA=";
 
   buildInputs = lib.optionals isDarwin [ Security SystemConfiguration ];
+
+  doCheck = false; # no tests
 
   meta = {
     homepage = "https://usage.jdx.dev";
