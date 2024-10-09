@@ -11,7 +11,7 @@ in
 pkgs.unstable.buildGo123Module {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
-  vendorHash = "sha256-9qkealjjdBO659fdWdgFii3ThPRwKpYasB03L3Bktqs=";
+  vendorHash = "sha256-aTtvVpL979BUvSBwBqRqCWSWIBBmmty9vBD97Q5P4+E=";
 
   ldflags = ["-s" "-w"];
 
