@@ -84,7 +84,9 @@ in
           minioS3URL = "s3.bjw-s.dev";
         };
 
-        nfs.enable = true;
+        nfs = {
+          enable = true;
+        };
 
         node-exporter.enable = true;
 

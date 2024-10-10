@@ -10,7 +10,7 @@ in
   options.modules.services.nfs = {
     enable = lib.mkEnableOption "nfs";
     exports = lib.mkOption {
-      type = lib.types.str;
+      type = lib.types.lines;
       default = "";
     };
   };
