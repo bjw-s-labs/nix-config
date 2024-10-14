@@ -173,10 +173,10 @@
             "name": null,
             "owner": "jdx",
             "repo": "usage",
-            "rev": "v0.8.4",
-            "sha256": "sha256-vHZ5CZiFvbG5Xx0nOIpcKgi10Hk6DieMIXRFjke2tOY=",
+            "rev": "v0.10.0",
+            "sha256": "sha256-NkVBdqHtVHhyX8wkn3yJ01bKG9s82sA/deLspNECnHk=",
             "type": "github"
         },
-        "version": "v0.8.4"
+        "version": "v0.10.0"
     }
 }
