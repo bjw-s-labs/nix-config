@@ -7,16 +7,16 @@ tasks:
     silent: true
     summary: |
       Args:
-        host: Host to build and deploy to (required)
+        HOST: Host to build and deploy to (required)
     requires:
       vars:
-        - host
+        - HOST
     cmds:
       - task: build-darwin
         vars:
-          host: "{{ .host }}"
-      - task: .prompt_to_continue
-      - darwin-rebuild switch --flake "{{.ROOT_DIR}}/#{{.host}}"
+          HOST: "{{ .HOST }}"
+      - task: _prompt_to_continue
+      - darwin-rebuild switch --flake "{{.ROOT_DIR}}/#{{.HOST}}"
     preconditions:
       - sh: which nix
         msg: "nix not found"
@@ -28,12 +28,12 @@ tasks:
     silent: true
     summary: |
       Args:
-        host: Host to build and deploy to (required)
+        HOST: Host to build and deploy to (required)
     requires:
       vars:
-        - host
+        - HOST
     cmds:
-      - darwin-rebuild build --flake "{{.ROOT_DIR}}/#{{.host}}"
+      - darwin-rebuild build --flake "{{.ROOT_DIR}}/#{{.HOST}}"
       - nvd diff /run/current-system result
     preconditions:
       - sh: which nix
@@ -45,15 +45,15 @@ tasks:
     desc: Build nixos configuration
     silent: true
     vars:
-      ssh_user: bjw-s
+      SSH_USER: bjw-s
     summary: |
       Args:
-        host: Host to build and deploy to (required)
+        HOST: Host to build and deploy to (required)
     requires:
       vars:
-        - host
+        - HOST
     cmds:
-      - nix-shell -p nixos-rebuild --run 'nixos-rebuild build --flake .#{{.host}} --fast --use-remote-sudo --build-host "{{.ssh_user}}@{{.host}}.bjw-s.internal" --target-host "{{.ssh_user}}@{{.host}}.bjw-s.internal"'
+      - nix-shell -p nixos-rebuild --run 'nixos-rebuild build --flake .#{{.HOST}} --fast --use-remote-sudo --build-host "{{.SSH_USER}}@{{.HOST}}.bjw-s.internal" --target-host "{{.SSH_USER}}@{{.HOST}}.bjw-s.internal"'
     preconditions:
       - sh: which nix
         msg: "nix not found"
@@ -64,21 +64,21 @@ tasks:
     desc: Build and apply nixos configuration
     silent: true
     vars:
-      ssh_user: bjw-s
+      SSH_USER: bjw-s
     summary: |
       Args:
-        host: Host to build and deploy to (required)
+        HOST: Host to build and deploy to (required)
     requires:
       vars:
-        - host
+        - HOST
     cmds:
-      - nix-shell -p nixos-rebuild --run 'nixos-rebuild switch --flake .#{{.host}} --fast --use-remote-sudo --build-host "{{.ssh_user}}@{{.host}}.bjw-s.internal" --target-host "{{.ssh_user}}@{{.host}}.bjw-s.internal"'
+      - nix-shell -p nixos-rebuild --run 'nixos-rebuild switch --flake .#{{.HOST}} --fast --use-remote-sudo --build-host "{{.SSH_USER}}@{{.HOST}}.bjw-s.internal" --target-host "{{.SSH_USER}}@{{.HOST}}.bjw-s.internal"'
     preconditions:
       - sh: which nix
         msg: "nix not found"
       - sh: which nixos-rebuild
         msg: "nixos-rebuild not found"
 
-  .prompt_to_continue:
+  _prompt_to_continue:
     internal: true
     prompt: Do you want to continue applying this configuration?
