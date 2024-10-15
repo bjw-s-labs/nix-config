@@ -16,7 +16,7 @@ in
 rustPlatform.buildRustPackage rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
-  cargoHash = "sha256-u04eVpmMnmsJqJVKSzc/Ja4o///sOTmvpMSwYSXfVyA=";
+  cargoHash = "sha256-HU3GGxtyFe04m99wNy1TtMq5vSg16UrCy7Gm/aU/Mlw=";
 
   buildInputs = lib.optionals isDarwin [ Security SystemConfiguration ];
 
