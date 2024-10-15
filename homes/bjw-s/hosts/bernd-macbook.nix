@@ -23,6 +23,7 @@
           tools = {
             python = "latest";
             node = "latest";
+            go = "latest";
           };
         };
       };
