@@ -14,7 +14,7 @@ in {
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       home.packages = [
-        pkgs.go-task
+        pkgs.unstable.go-task
       ];
     })
   ];
