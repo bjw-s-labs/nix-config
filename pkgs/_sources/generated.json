@@ -153,11 +153,11 @@
             "name": null,
             "owner": "siderolabs",
             "repo": "talos",
-            "rev": "v1.8.1",
-            "sha256": "sha256-6WHeiVH/vZHiM4bqq3T5lC0ARldJyZtIErPeDgrZgxc=",
+            "rev": "v1.8.2",
+            "sha256": "sha256-sD/Nn1ZLM6JIZdWQsBioKyhrAvhz749LL4xWleQ80xY=",
             "type": "github"
         },
-        "version": "v1.8.1"
+        "version": "v1.8.2"
     },
     "usage-cli": {
         "cargoLocks": null,
@@ -173,10 +173,10 @@
             "name": null,
             "owner": "jdx",
             "repo": "usage",
-            "rev": "v0.11.0",
-            "sha256": "sha256-Twb4sV6Yn5WeRRCig/QU2NeAAxQOGAmrdUegijLnLdo=",
+            "rev": "v1.3.0",
+            "sha256": "sha256-pV37KRjPUgQVm9855sAgFhNrEWX4MC7qeMnmHoUj23k=",
             "type": "github"
         },
-        "version": "v0.11.0"
+        "version": "v1.3.0"
     }
 }

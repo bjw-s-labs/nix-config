@@ -81,24 +81,24 @@
   };
   talosctl = {
     pname = "talosctl";
-    version = "v1.8.1";
+    version = "v1.8.2";
     src = fetchFromGitHub {
       owner = "siderolabs";
       repo = "talos";
-      rev = "v1.8.1";
+      rev = "v1.8.2";
       fetchSubmodules = false;
-      sha256 = "sha256-6WHeiVH/vZHiM4bqq3T5lC0ARldJyZtIErPeDgrZgxc=";
+      sha256 = "sha256-sD/Nn1ZLM6JIZdWQsBioKyhrAvhz749LL4xWleQ80xY=";
     };
   };
   usage-cli = {
     pname = "usage-cli";
-    version = "v0.11.0";
+    version = "v1.3.0";
     src = fetchFromGitHub {
       owner = "jdx";
       repo = "usage";
-      rev = "v0.11.0";
+      rev = "v1.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-Twb4sV6Yn5WeRRCig/QU2NeAAxQOGAmrdUegijLnLdo=";
+      sha256 = "sha256-pV37KRjPUgQVm9855sAgFhNrEWX4MC7qeMnmHoUj23k=";
     };
   };
 }
