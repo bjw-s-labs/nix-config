@@ -37,13 +37,13 @@
   };
   kubectl-klock = {
     pname = "kubectl-klock";
-    version = "v0.7.0";
+    version = "v0.7.2";
     src = fetchFromGitHub {
       owner = "applejag";
       repo = "kubectl-klock";
-      rev = "v0.7.0";
+      rev = "v0.7.2";
       fetchSubmodules = false;
-      sha256 = "sha256-MmsHxB15gCz2W2QLC6E7Ao+9iLyVaYJatUgPcMuL79M=";
+      sha256 = "sha256-S7cpVRVboLkU+GgvwozJmfFAO29tKpPlk+r9mbVLxF8=";
     };
   };
   kubectl-netshoot = {
@@ -81,13 +81,13 @@
   };
   talosctl = {
     pname = "talosctl";
-    version = "v1.8.2";
+    version = "v1.8.3";
     src = fetchFromGitHub {
       owner = "siderolabs";
       repo = "talos";
-      rev = "v1.8.2";
+      rev = "v1.8.3";
       fetchSubmodules = false;
-      sha256 = "sha256-sD/Nn1ZLM6JIZdWQsBioKyhrAvhz749LL4xWleQ80xY=";
+      sha256 = "sha256-KC5FxNrKRcAvM9IVuj9jh2AdQ6qqqdo3GwWRHH8t9As=";
     };
   };
   usage-cli = {
