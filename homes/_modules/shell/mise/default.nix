@@ -55,9 +55,12 @@ in
         eval "$(${lib.getExe cfg.package} activate bash)"
       '';
 
-      fish.shellInit = lib.mkAfter ''
-        ${lib.getExe cfg.package} hook-env | source
+      fish.interactiveShellInit = lib.mkAfter ''
         ${lib.getExe cfg.package} activate fish | source
+      '';
+
+      fish.shellInit = lib.mkAfter ''
+        ${lib.getExe cfg.package} activate fish --shims | source
       '';
     };
   };
