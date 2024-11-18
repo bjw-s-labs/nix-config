@@ -51,12 +51,15 @@
       # Avoid copying unnecessary stuff over SSH
       builders-use-substitutes = true;
 
-      auto-optimise-store = true;
       keep-outputs = true;
       keep-derivations = false;
 
       # this makes sure to always check for new commits when fetching source
       tarball-ttl = 0;
+    };
+
+    optimise = {
+      automatic = true;
     };
 
     # Add nixpkgs input to NIX_PATH
