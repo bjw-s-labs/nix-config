@@ -1,14 +1,13 @@
 {
   pkgs,
   lib,
-  buildGoModule,
   ...
 }:
 let
   sourceData = pkgs.callPackage ./_sources/generated.nix { };
   packageData = sourceData.kubectl-pgo;
 in
-buildGoModule rec {
+pkgs.buildGoModule rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
   vendorHash = "sha256-PhTDqsFhPas2mcK7Ew2TQNqnvftk/+7wo2yFE9dnSUY=";
