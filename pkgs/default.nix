@@ -4,16 +4,16 @@
   inputs,
   pkgs ? import <nixpkgs> {},
   ...
-} @_inputs:
+}:
 {
-  kubecolor-catppuccin = pkgs.callPackage ./kubecolor-catppuccin.nix {};
-  kubectl-browse-pvc = pkgs.callPackage ./kubectl-browse-pvc.nix {};
-  kubectl-get-all = pkgs.callPackage ./kubectl-get-all.nix {};
-  kubectl-klock = pkgs.callPackage ./kubectl-klock.nix {};
-  kubectl-netshoot = pkgs.callPackage ./kubectl-netshoot.nix {};
-  kubectl-pgo = pkgs.callPackage ./kubectl-pgo.nix {};
-  shcopy = pkgs.callPackage ./shcopy.nix {};
+  kubecolor-catppuccin = pkgs.callPackage ./kubecolor-catppuccin {};
+  kubectl-browse-pvc = pkgs.callPackage ./kubectl-browse-pvc {};
+  kubectl-get-all = pkgs.callPackage ./kubectl-get-all {};
+  kubectl-klock = pkgs.callPackage ./kubectl-klock {};
+  kubectl-netshoot = pkgs.callPackage ./kubectl-netshoot {};
+  kubectl-pgo = pkgs.callPackage ./kubectl-pgo {};
+  shcopy = pkgs.callPackage ./shcopy {};
   talhelper = inputs.talhelper.packages.${pkgs.system}.default;
-  talosctl = pkgs.callPackage ./talosctl.nix {};
-  usage = pkgs.callPackage ./usage.nix {};
+  talosctl = pkgs.callPackage ./talosctl {};
+  usage-cli = pkgs.callPackage ./usage-cli {};
 }

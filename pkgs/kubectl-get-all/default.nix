@@ -4,7 +4,7 @@
   ...
 }:
 let
-  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  sourceData = pkgs.callPackage ../_sources/generated.nix { };
   packagedata = sourceData.kubectl-get-all;
 in
 pkgs.buildGoModule rec {

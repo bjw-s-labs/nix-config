@@ -28,11 +28,37 @@ jobs:
         id: run-nvfetcher
         run: |
           cd pkgs
+          nix-shell -p nvfetcher --command 'nvfetcher -l ../changes'
           {
             echo 'changes<<EOF'
-            nix-shell -p nvfetcher --command 'nvfetcher' | sed -n '/Changes/,/$!d/p'
+            cat ../changes
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
+
+      - name: Update vendor hashes
+        id: update-vendorhash
+        run: |
+          CHANGES_FILE="changes"
+          VENDOR_HASH_FILE="pkgs/_sources/vendorhash.json"
+
+          setHash () {
+            jq --arg app "${1}" --arg hash "${2}" '.[$app] = $hash' "${VENDOR_HASH_FILE}" > tmp.json && mv tmp.json "${VENDOR_HASH_FILE}"
+          }
+
+          declare -a APP_NAMES
+          while read line; do
+            APP_NAMES+=("${line%:*}")
+          done < "${CHANGES_FILE}"
+
+          for APP_NAME in "${APP_NAMES[@]}"; do
+            setHash "${APP_NAME}" ""
+            vendorHash=$(nix build --no-link .#${APP_NAME} 2>&1 >/dev/null | grep "got:" | cut -d':' -f2 | sed 's| ||g')
+
+            if [[ -n "${vendorHash}" ]]; then
+              setHash "${APP_NAME}" "${vendorHash}"
+              echo "Updated ${APP_NAME} with vendorHash: ${vendorHash}"
+            fi
+          done
 
       - name: Generate Token
         uses: actions/create-github-app-token@v1

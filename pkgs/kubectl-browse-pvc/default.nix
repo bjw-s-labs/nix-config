@@ -4,7 +4,7 @@
   ...
 }:
 let
-  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  sourceData = pkgs.callPackage ../_sources/generated.nix { };
   packageData = sourceData.kubectl-browse-pvc;
 in
 pkgs.buildGoModule rec {

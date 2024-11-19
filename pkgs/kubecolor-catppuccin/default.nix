@@ -4,7 +4,7 @@
   ...
 }:
 let
-  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  sourceData = pkgs.callPackage ../_sources/generated.nix { };
   packageData = sourceData.kubecolor-catppuccin;
 in
 stdenv.mkDerivation {
