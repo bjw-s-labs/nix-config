@@ -18,7 +18,6 @@
     editor = {
       nvim = {
         enable = true;
-        package = pkgs.nvim;
         makeDefaultEditor = true;
       };
 

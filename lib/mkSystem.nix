@@ -72,7 +72,6 @@
             useGlobalPkgs = true;
             sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
-              inputs.nixvim.homeManagerModules.nixvim
               inputs.catppuccin.homeManagerModules.catppuccin
             ];
             extraSpecialArgs = {
