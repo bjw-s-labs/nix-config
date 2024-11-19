@@ -5,7 +5,7 @@
   ...
 }:
 let
-  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  sourceData = pkgs.callPackage ../_sources/generated.nix { };
   packageData = sourceData.kubectl-klock;
 in
 buildGoModule rec {

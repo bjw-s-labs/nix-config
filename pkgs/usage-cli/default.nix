@@ -10,13 +10,14 @@ let
     cargo = pkgs.rust-bin.stable.latest.minimal;
     rustc = pkgs.rust-bin.stable.latest.minimal;
   };
-  sourceData = pkgs.callPackage ./_sources/generated.nix { };
+  sourceData = pkgs.callPackage ../_sources/generated.nix { };
+  vendorHash = lib.importJSON ../_sources/vendorhash.json;
   packageData = sourceData.usage-cli;
 in
 rustPlatform.buildRustPackage rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
-  cargoHash = "sha256-fNsLG4l2y/m0NQ+2ApDag0m7ObXVUrOQikp29jTikUQ=";
+  cargoHash = vendorHash.usage;
 
   buildInputs = lib.optionals isDarwin [ Security SystemConfiguration ];
 

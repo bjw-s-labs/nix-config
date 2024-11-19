@@ -1,20 +1,13 @@
 {
   inputs,
-  overlays,
+  mkPkgsWithSystem,
   ...
 }:
 {
   mkNixosSystem = system: hostname:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        overlays = builtins.attrValues overlays;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = _: true;
-        };
-      };
+      pkgs = mkPkgsWithSystem system;
       modules = [
         {
           nixpkgs.hostPlatform = system;
@@ -50,14 +43,7 @@
   mkDarwinSystem = system: hostname:
     inputs.nix-darwin.lib.darwinSystem {
       inherit system;
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        overlays = builtins.attrValues overlays;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = _: true;
-        };
-      };
+      pkgs = mkPkgsWithSystem system;
       modules = [
         {
           nixpkgs.hostPlatform = system;
