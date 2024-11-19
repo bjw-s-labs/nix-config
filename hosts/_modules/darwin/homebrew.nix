@@ -22,6 +22,7 @@ _:
       "jordanbaird-ice"
       "karabiner-elements"
       "keyboard-maestro"
+      "linearmouse"
       "raycast"
       "shottr"
     ];
