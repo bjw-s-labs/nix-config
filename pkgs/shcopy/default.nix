@@ -1,14 +1,13 @@
 {
   pkgs,
   lib,
-  buildGoModule,
   ...
 }:
 let
   sourceData = pkgs.callPackage ../_sources/generated.nix { };
   packageData = sourceData.shcopy;
 in
-buildGoModule rec {
+pkgs.buildGoModule rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
   vendorHash = "sha256-kD73EozkeUd23pwuy71bcNmth2lEKom0CUPDUNPNB1Q=";
