@@ -51,6 +51,7 @@ jobs:
           done < "${CHANGES_FILE}"
 
           for APP_NAME in "${APP_NAMES[@]}"; do
+            echo "Updating vendor hash for ${APP_NAME}..."
             setHash "${APP_NAME}" ""
             vendorHash=$(nix build --no-link .#${APP_NAME} 2>&1 >/dev/null | grep "got:" | cut -d':' -f2 | sed 's| ||g')
 
