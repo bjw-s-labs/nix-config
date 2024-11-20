@@ -70,6 +70,7 @@
       import inputs.nixpkgs {
         inherit system;
         overlays = builtins.attrValues (import ./overlays { inherit inputs; });
+        config.allowUnfree = true;
       };
     mkSystemLib = import ./lib/mkSystem.nix {inherit inputs mkPkgsWithSystem;};
   in
