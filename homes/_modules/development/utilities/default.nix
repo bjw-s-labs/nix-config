@@ -12,6 +12,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = (with pkgs; [
       cue
+      minijinja
       nixd
       nixfmt-rfc-style
       nodePackages.prettier
