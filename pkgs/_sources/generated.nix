@@ -90,8 +90,8 @@
       sha256 = "sha256-KC5FxNrKRcAvM9IVuj9jh2AdQ6qqqdo3GwWRHH8t9As=";
     };
   };
-  usage-cli = {
-    pname = "usage-cli";
+  usage = {
+    pname = "usage";
     version = "v1.3.2";
     src = fetchFromGitHub {
       owner = "jdx";

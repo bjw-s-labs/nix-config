@@ -159,11 +159,11 @@
         },
         "version": "v1.8.3"
     },
-    "usage-cli": {
+    "usage": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
-        "name": "usage-cli",
+        "name": "usage",
         "passthru": null,
         "pinned": false,
         "src": {

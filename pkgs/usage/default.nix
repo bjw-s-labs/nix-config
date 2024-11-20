@@ -1,25 +1,26 @@
 {
   pkgs,
   lib,
+  rustPlatform,
+  nix-update-script,
   ...
 }:
 let
   inherit (pkgs.stdenv.hostPlatform) isDarwin;
   inherit (pkgs.darwin.apple_sdk.frameworks) Security SystemConfiguration;
-  rustPlatform = pkgs.makeRustPlatform {
-    cargo = pkgs.rust-bin.stable.latest.minimal;
-    rustc = pkgs.rust-bin.stable.latest.minimal;
-  };
+
   sourceData = pkgs.callPackage ../_sources/generated.nix { };
   vendorHash = lib.importJSON ../_sources/vendorhash.json;
-  packageData = sourceData.usage-cli;
+  packageData = sourceData.usage;
 in
 rustPlatform.buildRustPackage rec {
   inherit (packageData) pname src;
   version = lib.strings.removePrefix "v" packageData.version;
-  cargoHash = vendorHash.usage-cli;
+  cargoHash = vendorHash.usage;
 
-  buildInputs = lib.optionals isDarwin [ Security SystemConfiguration ];
+  passthru = {
+    updateScript = nix-update-script { };
+  };
 
   doCheck = false; # no tests
 

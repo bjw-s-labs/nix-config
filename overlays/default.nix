@@ -3,8 +3,6 @@
   ...
 }:
 {
-  rust-overlay = inputs.rust-overlay.overlays.default;
-
   additions = final: _prev:
     import ../pkgs {
       inherit inputs;

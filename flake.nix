@@ -41,12 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # rust-overlay - nix overlay of binary distributed rust toolchains
-    # https://github.com/oxalica/rust-overlay
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-    };
-
     # Catppuccin - Soothing pastel theme for Nix
     # https://github.com/catppuccin/nix
     catppuccin = {

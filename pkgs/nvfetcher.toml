@@ -23,6 +23,6 @@ fetch.github = "aymanbagabas/shcopy"
 [talosctl]
 src.github = "siderolabs/talos"
 fetch.github = "siderolabs/talos"
-[usage-cli]
+[usage]
 src.github = "jdx/usage"
 fetch.github = "jdx/usage"
