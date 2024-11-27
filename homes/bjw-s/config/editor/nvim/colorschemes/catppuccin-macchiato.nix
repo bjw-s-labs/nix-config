@@ -4,7 +4,7 @@
       catppuccin = {
         enable = true;
         settings = {
-          flavour = "macchiato";
+          flavour = "mocha";
         };
       };
     };

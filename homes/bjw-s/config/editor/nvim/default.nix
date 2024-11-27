@@ -3,7 +3,7 @@
 }:
 {
   imports = [
-    ./colorschemes/catppuccin-macchiato.nix
+    ./colorschemes/catppuccin-mocha.nix
 
     ./autocommands.nix
     ./options.nix

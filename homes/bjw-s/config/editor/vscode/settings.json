@@ -115,8 +115,8 @@
     "titleBarStyle": "custom"
   },
   "workbench": {
-    "colorTheme": "Catppuccin Macchiato",
-    "iconTheme": "catppuccin-perfect-macchiato",
+    "colorTheme": "Catppuccin Mocha",
+    "iconTheme": "catppuccin-perfect-mocha",
     "sideBar": {
       "location": "left"
     },
@@ -125,7 +125,7 @@
       "renderIndentGuides": "none"
     }
   },
-  "workbench.iconTheme": "catppuccin-perfect-macchiato",
+  "workbench.iconTheme": "catppuccin-perfect-mocha",
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false
 }
