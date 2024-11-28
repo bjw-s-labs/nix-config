@@ -35,6 +35,7 @@ in
       kubectl-klock
       kubectl-netshoot
       kubectl-pgo
+      kubelogin-oidc
       talhelper
       talosctl
     ]) ++
