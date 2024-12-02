@@ -10,7 +10,7 @@ in
 {
   options.modules.services.samba = {
     enable = lib.mkEnableOption "samba";
-    shares = lib.mkOption {
+    settings = lib.mkOption {
       type = lib.types.attrs;
       default = {};
     };
@@ -20,8 +20,6 @@ in
     users.groups.samba-users = {};
 
     services.samba = {
-      inherit (cfg) shares;
-
       enable = true;
       package = pkgs.samba;
       openFirewall = true;
@@ -53,7 +51,7 @@ in
           "veto files" = "/._*/.DS_Store/";
           "delete veto files" = "yes";
         };
-      };
+      } // cfg.settings;
     };
   };
 }

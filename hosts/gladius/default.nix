@@ -94,7 +94,7 @@ in
 
         samba = {
           enable = true;
-          shares = {
+          settings = {
             Backup = {
               path = "/tank/Backup";
               "read only" = "no";
