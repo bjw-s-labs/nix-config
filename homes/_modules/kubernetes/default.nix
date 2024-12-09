@@ -60,6 +60,7 @@ in
       plugins = [
         "browse-pvc"
         "klock"
+        "neat"
         "oidc-login"
         "pv-migrate"
         "rook-ceph"
