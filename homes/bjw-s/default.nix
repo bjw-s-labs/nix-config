@@ -74,11 +74,6 @@
             user = "bjw-s";
             forwardAgent = true;
           };
-          "milton.bjw-s.internal" = {
-            port = 22;
-            user = "bjw-s";
-            forwardAgent = true;
-          };
         };
       };
     };
