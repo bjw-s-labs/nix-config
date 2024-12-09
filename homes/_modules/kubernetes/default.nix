@@ -30,25 +30,16 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = (with pkgs; [
       kubecolor-catppuccin
-      kubectl-browse-pvc
-      kubectl-get-all
-      kubectl-klock
-      kubectl-netshoot
       kubectl-pgo
-      kubelogin-oidc
       talhelper
       talosctl
     ]) ++
     (with pkgs.unstable; [
       fluxcd
-      krew
       kubecm
       kubeconform
       kubecolor
       kubectl
-      kubectl-neat
-      kubectl-node-shell
-      kubectl-view-secret
       stern
     ]) ++
     [
@@ -58,6 +49,23 @@ in
 
     home.sessionVariables = {
       KUBECOLOR_CONFIG = "${pkgs.kubecolor-catppuccin}/catppuccin-${catppuccinCfg.flavor}.yaml";
+    };
+
+    programs.krewfile = {
+      enable = true;
+      krewPackage = pkgs.unstable.krew;
+      indexes = {
+        netshoot = "https://github.com/nilic/kubectl-netshoot.git";
+      };
+      plugins = [
+        "browse-pvc"
+        "klock"
+        "oidc-login"
+        "pv-migrate"
+        "rook-ceph"
+        "netshoot/netshoot"
+        "view-secret"
+      ];
     };
 
     programs.k9s = {
@@ -134,7 +142,6 @@ in
 
     programs.fish = {
       interactiveShellInit = ''
-        fish_add_path $HOME/.krew/bin
         ${lib.getExe pkgs.unstable.kubecm} completion fish | source
       '';
 

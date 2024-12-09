@@ -1,9 +1,12 @@
 {
+  inputs,
   pkgs,
   ...
 }:
 {
   imports = [
+    inputs.krewfile.homeManagerModules.krewfile
+
     ./mutability.nix
 
     ./deployment
