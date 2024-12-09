@@ -23,7 +23,12 @@
 
       vscode = {
         userSettings = lib.importJSON ./config/editor/vscode/settings.json;
-        extensions = let
+        extensions = (with pkgs.unstable.vscode-extensions; [
+          # Remote development
+          ms-vscode-remote.remote-containers
+          ms-vscode-remote.remote-ssh
+        ]) ++
+        (let
           inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}) vscode-marketplace;
         in
           with vscode-marketplace; [
@@ -33,12 +38,10 @@
 
             # Language support
             golang.go
-            # hashicorp.terraform
             helm-ls.helm-ls
             jnoortheen.nix-ide
             ms-azuretools.vscode-docker
             ms-python.python
-            # redhat.ansible
             redhat.vscode-yaml
             savh.json5-kit
             tamasfe.even-better-toml
@@ -50,10 +53,6 @@
             davidanson.vscode-markdownlint
             fnando.linter
 
-            # Remote development
-            ms-vscode-remote.remote-containers
-            ms-vscode-remote.remote-ssh
-
             # Other
             eamodio.gitlens
             gruntfuggly.todo-tree
@@ -61,7 +60,8 @@
             luisfontes19.vscode-swissknife
             ms-kubernetes-tools.vscode-kubernetes-tools
             signageos.signageos-vscode-sops
-          ];
+          ]
+        );
       };
     };
 
