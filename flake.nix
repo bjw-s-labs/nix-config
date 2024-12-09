@@ -44,7 +44,7 @@
     # Catppuccin - Soothing pastel theme for Nix
     # https://github.com/catppuccin/nix
     catppuccin = {
-      url = "github:catppuccin/nix/v1.0.2";
+      url = "github:catppuccin/nix";
     };
 
     # nix-inspect - Interactive tui for inspecting nix configs
