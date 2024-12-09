@@ -10,16 +10,6 @@
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
-  "[terraform]": {
-    "editor": {
-      "defaultFormatter": "hashicorp.terraform"
-    }
-  },
-  "ansible": {
-    "python": {
-      "interpreterPath": ".venv/bin/python"
-    }
-  },
   "editor": {
     "bracketPairColorization": {
       "enabled": true
@@ -42,6 +32,8 @@
     "confirmDelete": false,
     "confirmDragAndDrop": false
   },
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
   "files": {
     "associations": {},
     "autoSave": "onFocusChange",
@@ -80,13 +72,6 @@
   "path-autocomplete": {
     "triggerOutsideStrings": true
   },
-  "qalc": {
-    "output": {
-      "displayCommas": false,
-      "notation": "auto",
-      "precision": 0
-    }
-  },
   "redhat": {
     "telemetry": {
       "enabled": false
@@ -116,7 +101,6 @@
   },
   "workbench": {
     "colorTheme": "Catppuccin Mocha",
-    "iconTheme": "catppuccin-perfect-mocha",
     "sideBar": {
       "location": "left"
     },
@@ -125,7 +109,5 @@
       "renderIndentGuides": "none"
     }
   },
-  "workbench.iconTheme": "catppuccin-perfect-mocha",
-  "extensions.autoCheckUpdates": false,
-  "extensions.autoUpdate": false
+  "workbench.iconTheme": "catppuccin-mocha"
 }

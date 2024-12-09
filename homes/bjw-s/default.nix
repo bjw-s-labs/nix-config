@@ -34,7 +34,7 @@
           with vscode-marketplace; [
             # Themes
             catppuccin.catppuccin-vsc
-            thang-nm.catppuccin-perfect-icons
+            catppuccin.catppuccin-vsc-icons
 
             # Language support
             golang.go
