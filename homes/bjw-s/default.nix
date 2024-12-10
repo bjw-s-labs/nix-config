@@ -32,10 +32,6 @@
           inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}) vscode-marketplace;
         in
           with vscode-marketplace; [
-            # Themes
-            catppuccin.catppuccin-vsc
-            catppuccin.catppuccin-vsc-icons
-
             # Language support
             golang.go
             helm-ls.helm-ls
