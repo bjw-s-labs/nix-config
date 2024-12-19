@@ -1,3 +1,5 @@
 {
-  "usage": "sha256-Ij7ykqT4XdAq6XoZWvGJHYqc+Tf3yqfsUSG9/3pDJvk="
+  "usage": "sha256-Pn5tUublRo37nBLM1baQ4ey0KL7iAilpHrB/caOSK0I=",
+  "kubectl-pgo": "",
+  "talosctl": "sha256-XvOMNyiHnemqnbOzWmzZXkr3+/ZgJDg8vjCtWFkCtLs="
 }
